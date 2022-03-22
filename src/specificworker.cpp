@@ -171,7 +171,7 @@ void SpecificWorker::posicionRobot (){
         robot_polygon->setPos(bState.x, bState.y);
 
         pos_x->display(bState.x);
-        pos_z->display(bState.y);
+        pos_y->display(bState.z);
     }
     catch(const Ice::Exception &e){ std::cout << e.what() << " POSE ERROR" << std::endl;}
 }

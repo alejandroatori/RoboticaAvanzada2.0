@@ -42,7 +42,7 @@ public:
     QHBoxLayout *horizontalLayout_3;
     QLabel *posz_label;
     QSpacerItem *horizontalSpacer_2;
-    QLCDNumber *pos_z;
+    QLCDNumber *pos_y;
     QSpacerItem *verticalSpacer;
     QLabel *bottom_camera_label;
 
@@ -145,11 +145,11 @@ public:
 
         horizontalLayout_3->addItem(horizontalSpacer_2);
 
-        pos_z = new QLCDNumber(control_frame);
-        pos_z->setObjectName(QString::fromUtf8("pos_z"));
-        pos_z->setSegmentStyle(QLCDNumber::Flat);
+        pos_y = new QLCDNumber(control_frame);
+        pos_y->setObjectName(QString::fromUtf8("pos_y"));
+        pos_y->setSegmentStyle(QLCDNumber::Flat);
 
-        horizontalLayout_3->addWidget(pos_z);
+        horizontalLayout_3->addWidget(pos_y);
 
 
         verticalLayout_2->addLayout(horizontalLayout_3);
@@ -180,7 +180,7 @@ public:
         top_camera_label->setText(QApplication::translate("guiDlg", "CameraRGB", nullptr));
         speed_label->setText(QApplication::translate("guiDlg", "Speed", nullptr));
         posx_label->setText(QApplication::translate("guiDlg", "Position X", nullptr));
-        posz_label->setText(QApplication::translate("guiDlg", "Position Z", nullptr));
+        posz_label->setText(QApplication::translate("guiDlg", "Position Y", nullptr));
         bottom_camera_label->setText(QApplication::translate("guiDlg", "CameraRGBD", nullptr));
     } // retranslateUi
 

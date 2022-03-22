@@ -158,7 +158,7 @@
          <item>
           <widget class="QLabel" name="posz_label">
            <property name="text">
-            <string>Position Z</string>
+            <string>Position Y</string>
            </property>
           </widget>
          </item>
@@ -176,7 +176,7 @@
           </spacer>
          </item>
          <item>
-          <widget class="QLCDNumber" name="pos_z">
+          <widget class="QLCDNumber" name="pos_y">
            <property name="segmentStyle">
             <enum>QLCDNumber::Flat</enum>
            </property>
