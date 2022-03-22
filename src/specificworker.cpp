@@ -158,6 +158,22 @@ void SpecificWorker::compute()
 {
     auto people = humancamerabody_proxy->newPeopleData();
     cameraSetUp(people);
+    posicionRobot();
+}
+
+void SpecificWorker::posicionRobot (){
+    try
+    {
+        RoboCompFullPoseEstimation::FullPoseEuler bState;
+        bState = fullposeestimation_proxy->getFullPoseEuler();
+
+        robot_polygon->setRotation(bState.rz*180/M_PI);
+        robot_polygon->setPos(bState.x, bState.y);
+
+        pos_x->display(bState.x);
+        pos_z->display(bState.y);
+    }
+    catch(const Ice::Exception &e){ std::cout << e.what() << " POSE ERROR" << std::endl;}
 }
 
 void SpecificWorker::drawSkeleton (cv::Mat &image, const RoboCompHumanCameraBody::PeopleData &people_data){
@@ -178,6 +194,35 @@ void SpecificWorker::drawSkeleton (cv::Mat &image, const RoboCompHumanCameraBody
 
 
 /////////////////////////////////////////////////////////////////////////
+void SpecificWorker::world_to_robot(Eigen::Vector2f robot_eigen, Eigen::Vector2f target_eigen, RoboCompFullPoseEstimation::FullPoseEuler bState)
+{
+    Eigen::Matrix2f rot;
+    rot << cos(bState.rz), -sin(bState.rz), sin(bState.rz), cos(bState.rz);
+    auto tr = rot.transpose() * (target_eigen - robot_eigen);
+    this->beta = atan2(tr(0), tr(1));
+    this->dist = tr.norm();
+}
+
+float SpecificWorker::speed_multiplier(float rot, float dist)
+{
+    float rot_factor, dist_factor;
+    if(rot > 1)
+        rot = 1;
+    if(rot < -1)
+        rot = -1;
+    rot_factor = exp(pow(-rot, 2));
+    if(dist > 1000)
+        dist = 1000;
+    dist_factor = dist/1000;
+    return (rot_factor * dist_factor);
+}
+
+void SpecificWorker::setRobotSpeed(float speed, float rot)
+{
+    differentialrobot_proxy->setSpeedBase(speed, rot);
+    this->speed->display(speed);
+}
+
 void SpecificWorker::draw_laser(const RoboCompLaser::TLaserData &ldata) // robot coordinates
 {
     static QGraphicsItem *laser_polygon = nullptr;

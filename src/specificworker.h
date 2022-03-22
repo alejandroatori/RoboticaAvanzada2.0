@@ -39,6 +39,11 @@
 class SpecificWorker : public GenericWorker
 {
 Q_OBJECT
+    struct Target
+    {
+        bool active = false;
+        QPointF dest;
+    };
 public:
 	SpecificWorker(TuplePrx tprx, bool startup_check);
 	~SpecificWorker();
@@ -69,14 +74,27 @@ private:
 
 
 
-    void draw_laser(const RoboCompLaser::TLaserData &ldata);
+
     void cameraSetUp (const RoboCompHumanCameraBody::PeopleData &people_data);
     void drawSkeleton (cv::Mat &image, const RoboCompHumanCameraBody::PeopleData &people_data);
+    void setRobotSpeed(float speed, float rot);
+    void posicionRobot ();
+
+    ////////////////////////////////////////////////////////////////////////////////////////
+    void draw_laser(const RoboCompLaser::TLaserData &ldata);
+    void world_to_robot(Eigen::Vector2f robot_eigen, Eigen::Vector2f target_eigen, RoboCompFullPoseEstimation::FullPoseEuler bState);
+    float speed_multiplier(float rot, float dist);
 
     // grid
     int TILE_SIZE = 100;
     QRectF dimensions;
     Grid grid;
+
+    //target
+    int state;
+    Target target;
+    float dist;
+    float beta;
 };
 
 #endif
