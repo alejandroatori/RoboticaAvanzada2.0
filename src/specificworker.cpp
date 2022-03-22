@@ -105,6 +105,30 @@ void SpecificWorker::cameraSetUp ()
             }
 
             auto pix = QPixmap::fromImage(top_qimg);
+            bottom_camera_label->setPixmap(pix);
+        }
+    }
+    catch(const Ice::Exception &e){ std::cout << e.what() << "CAMERA ERROR" << std::endl;}
+
+    //Camara normal
+
+    try
+    {
+        cv::Mat top_img_uncomp2;
+        QImage top_qimg2;
+        auto top_img2 = camerasimple_proxy->getImage();
+        if(not top_img2.image.empty())
+        {
+            if (top_img2.compressed)
+            {
+                top_img_uncomp2 = cv::imdecode(top_img2.image, -1);
+                cv::cvtColor(top_img_uncomp2, top_img_uncomp2, cv::COLOR_BGR2RGB);
+                top_qimg2 = QImage(top_img_uncomp2.data, top_img2.width, top_img2.height, QImage::Format_RGB888).scaled(
+                        top_camera_label->width(), top_camera_label->height(), Qt::KeepAspectRatioByExpanding);
+            } else
+                top_qimg2 = QImage(&top_img2.image[0], top_img2.width, top_img2.height, QImage::Format_RGB888).scaled(
+                        top_camera_label->width(), top_camera_label->height(), Qt::KeepAspectRatioByExpanding);
+            auto pix = QPixmap::fromImage(top_qimg2);
             top_camera_label->setPixmap(pix);
         }
     }
