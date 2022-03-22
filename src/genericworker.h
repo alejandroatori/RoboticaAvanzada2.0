@@ -36,6 +36,7 @@
 #include <DifferentialRobot.h>
 #include <FullPoseEstimation.h>
 #include <GenericBase.h>
+#include <HumanCameraBody.h>
 #include <JointMotorSimple.h>
 #include <Laser.h>
 
@@ -44,7 +45,7 @@
 #define BASIC_PERIOD 100
 
 
-using TuplePrx = std::tuple<RoboCompCameraRGBDSimple::CameraRGBDSimplePrxPtr,RoboCompCameraSimple::CameraSimplePrxPtr,RoboCompDifferentialRobot::DifferentialRobotPrxPtr,RoboCompFullPoseEstimation::FullPoseEstimationPrxPtr,RoboCompJointMotorSimple::JointMotorSimplePrxPtr,RoboCompLaser::LaserPrxPtr>;
+using TuplePrx = std::tuple<RoboCompCameraRGBDSimple::CameraRGBDSimplePrxPtr,RoboCompCameraSimple::CameraSimplePrxPtr,RoboCompDifferentialRobot::DifferentialRobotPrxPtr,RoboCompFullPoseEstimation::FullPoseEstimationPrxPtr,RoboCompHumanCameraBody::HumanCameraBodyPrxPtr,RoboCompJointMotorSimple::JointMotorSimplePrxPtr,RoboCompLaser::LaserPrxPtr>;
 
 
 class GenericWorker : public QWidget, public Ui_guiDlg
@@ -64,6 +65,7 @@ public:
 	RoboCompCameraSimple::CameraSimplePrxPtr camerasimple_proxy;
 	RoboCompDifferentialRobot::DifferentialRobotPrxPtr differentialrobot_proxy;
 	RoboCompFullPoseEstimation::FullPoseEstimationPrxPtr fullposeestimation_proxy;
+	RoboCompHumanCameraBody::HumanCameraBodyPrxPtr humancamerabody_proxy;
 	RoboCompJointMotorSimple::JointMotorSimplePrxPtr jointmotorsimple_proxy;
 	RoboCompLaser::LaserPrxPtr laser_proxy;
 

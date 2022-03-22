@@ -1,68 +1,33 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
-  )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/alumno/RoboticaAvanzada3/src/CameraRGBDSimple.cpp" "/home/alumno/RoboticaAvanzada3/src/CMakeFiles/giraff_viewer.dir/CameraRGBDSimple.cpp.o"
-  "/home/alumno/RoboticaAvanzada3/src/CameraSimple.cpp" "/home/alumno/RoboticaAvanzada3/src/CMakeFiles/giraff_viewer.dir/CameraSimple.cpp.o"
-  "/home/alumno/RoboticaAvanzada3/src/CommonBehavior.cpp" "/home/alumno/RoboticaAvanzada3/src/CMakeFiles/giraff_viewer.dir/CommonBehavior.cpp.o"
-  "/home/alumno/RoboticaAvanzada3/src/DifferentialRobot.cpp" "/home/alumno/RoboticaAvanzada3/src/CMakeFiles/giraff_viewer.dir/DifferentialRobot.cpp.o"
-  "/home/alumno/RoboticaAvanzada3/src/FullPoseEstimation.cpp" "/home/alumno/RoboticaAvanzada3/src/CMakeFiles/giraff_viewer.dir/FullPoseEstimation.cpp.o"
-  "/home/alumno/RoboticaAvanzada3/src/GenericBase.cpp" "/home/alumno/RoboticaAvanzada3/src/CMakeFiles/giraff_viewer.dir/GenericBase.cpp.o"
-  "/home/alumno/RoboticaAvanzada3/src/JointMotorSimple.cpp" "/home/alumno/RoboticaAvanzada3/src/CMakeFiles/giraff_viewer.dir/JointMotorSimple.cpp.o"
-  "/home/alumno/RoboticaAvanzada3/src/Laser.cpp" "/home/alumno/RoboticaAvanzada3/src/CMakeFiles/giraff_viewer.dir/Laser.cpp.o"
-  "/home/alumno/RoboticaAvanzada3/src/commonbehaviorI.cpp" "/home/alumno/RoboticaAvanzada3/src/CMakeFiles/giraff_viewer.dir/commonbehaviorI.cpp.o"
-  "/home/alumno/RoboticaAvanzada3/src/genericmonitor.cpp" "/home/alumno/RoboticaAvanzada3/src/CMakeFiles/giraff_viewer.dir/genericmonitor.cpp.o"
-  "/home/alumno/RoboticaAvanzada3/src/genericworker.cpp" "/home/alumno/RoboticaAvanzada3/src/CMakeFiles/giraff_viewer.dir/genericworker.cpp.o"
-  "/home/alumno/RoboticaAvanzada3/src/giraff_viewer_autogen/mocs_compilation.cpp" "/home/alumno/RoboticaAvanzada3/src/CMakeFiles/giraff_viewer.dir/giraff_viewer_autogen/mocs_compilation.cpp.o"
-  "/home/alumno/robocomp/classes/qlog/qlog.cpp" "/home/alumno/RoboticaAvanzada3/src/CMakeFiles/giraff_viewer.dir/home/alumno/robocomp/classes/qlog/qlog.cpp.o"
-  "/home/alumno/robocomp/classes/rapplication/rapplication.cpp" "/home/alumno/RoboticaAvanzada3/src/CMakeFiles/giraff_viewer.dir/home/alumno/robocomp/classes/rapplication/rapplication.cpp.o"
-  "/home/alumno/robocomp/classes/sigwatch/sigwatch.cpp" "/home/alumno/RoboticaAvanzada3/src/CMakeFiles/giraff_viewer.dir/home/alumno/robocomp/classes/sigwatch/sigwatch.cpp.o"
-  "/home/robocomp/robocomp/classes/grid2d/grid.cpp" "/home/alumno/RoboticaAvanzada3/src/CMakeFiles/giraff_viewer.dir/home/robocomp/robocomp/classes/grid2d/grid.cpp.o"
-  "/home/alumno/RoboticaAvanzada3/src/main.cpp" "/home/alumno/RoboticaAvanzada3/src/CMakeFiles/giraff_viewer.dir/main.cpp.o"
-  "/home/alumno/RoboticaAvanzada3/src/specificmonitor.cpp" "/home/alumno/RoboticaAvanzada3/src/CMakeFiles/giraff_viewer.dir/specificmonitor.cpp.o"
-  "/home/alumno/RoboticaAvanzada3/src/specificworker.cpp" "/home/alumno/RoboticaAvanzada3/src/CMakeFiles/giraff_viewer.dir/specificworker.cpp.o"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
-
-# Preprocessor definitions for this target.
-set(CMAKE_TARGET_DEFINITIONS_CXX
-  "ICE_CPP11_MAPPING"
-  "QT_CORE_LIB"
-  "QT_GUI_LIB"
-  "QT_NETWORK_LIB"
-  "QT_NO_DEBUG"
-  "QT_OPENGL_LIB"
-  "QT_SQL_LIB"
-  "QT_WIDGETS_LIB"
-  "QT_XMLPATTERNS_LIB"
-  "QT_XML_LIB"
   )
 
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "src/giraff_viewer_autogen/include"
-  "src"
-  "src/."
-  "/opt/robocomp/include"
-  "/classes"
-  "."
-  "/home/alumno/robocomp/classes"
-  "/home/alumno/robocomp/libs"
-  "/home/alumno/robocomp/interfaces"
-  "/include"
-  "/usr/include/opencv4"
-  "/usr/include/x86_64-linux-gnu/qt5"
-  "/usr/include/x86_64-linux-gnu/qt5/QtGui"
-  "/usr/include/x86_64-linux-gnu/qt5/QtCore"
-  "/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++"
-  "/usr/include/x86_64-linux-gnu/qt5/QtWidgets"
-  "/usr/include/x86_64-linux-gnu/qt5/QtSql"
-  "/usr/include/x86_64-linux-gnu/qt5/QtOpenGL"
-  "/usr/include/x86_64-linux-gnu/qt5/QtXml"
-  "/usr/include/x86_64-linux-gnu/qt5/QtXmlPatterns"
-  "/usr/include/x86_64-linux-gnu/qt5/QtNetwork"
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/alumno/RoboticaAvanzada3/src/CameraRGBDSimple.cpp" "src/CMakeFiles/giraff_viewer.dir/CameraRGBDSimple.cpp.o" "gcc" "src/CMakeFiles/giraff_viewer.dir/CameraRGBDSimple.cpp.o.d"
+  "/home/alumno/RoboticaAvanzada3/src/CameraSimple.cpp" "src/CMakeFiles/giraff_viewer.dir/CameraSimple.cpp.o" "gcc" "src/CMakeFiles/giraff_viewer.dir/CameraSimple.cpp.o.d"
+  "/home/alumno/RoboticaAvanzada3/src/CommonBehavior.cpp" "src/CMakeFiles/giraff_viewer.dir/CommonBehavior.cpp.o" "gcc" "src/CMakeFiles/giraff_viewer.dir/CommonBehavior.cpp.o.d"
+  "/home/alumno/RoboticaAvanzada3/src/DifferentialRobot.cpp" "src/CMakeFiles/giraff_viewer.dir/DifferentialRobot.cpp.o" "gcc" "src/CMakeFiles/giraff_viewer.dir/DifferentialRobot.cpp.o.d"
+  "/home/alumno/RoboticaAvanzada3/src/FullPoseEstimation.cpp" "src/CMakeFiles/giraff_viewer.dir/FullPoseEstimation.cpp.o" "gcc" "src/CMakeFiles/giraff_viewer.dir/FullPoseEstimation.cpp.o.d"
+  "/home/alumno/RoboticaAvanzada3/src/GenericBase.cpp" "src/CMakeFiles/giraff_viewer.dir/GenericBase.cpp.o" "gcc" "src/CMakeFiles/giraff_viewer.dir/GenericBase.cpp.o.d"
+  "/home/alumno/RoboticaAvanzada3/src/HumanCameraBody.cpp" "src/CMakeFiles/giraff_viewer.dir/HumanCameraBody.cpp.o" "gcc" "src/CMakeFiles/giraff_viewer.dir/HumanCameraBody.cpp.o.d"
+  "/home/alumno/RoboticaAvanzada3/src/JointMotorSimple.cpp" "src/CMakeFiles/giraff_viewer.dir/JointMotorSimple.cpp.o" "gcc" "src/CMakeFiles/giraff_viewer.dir/JointMotorSimple.cpp.o.d"
+  "/home/alumno/RoboticaAvanzada3/src/Laser.cpp" "src/CMakeFiles/giraff_viewer.dir/Laser.cpp.o" "gcc" "src/CMakeFiles/giraff_viewer.dir/Laser.cpp.o.d"
+  "/home/alumno/RoboticaAvanzada3/src/commonbehaviorI.cpp" "src/CMakeFiles/giraff_viewer.dir/commonbehaviorI.cpp.o" "gcc" "src/CMakeFiles/giraff_viewer.dir/commonbehaviorI.cpp.o.d"
+  "/home/alumno/RoboticaAvanzada3/src/genericmonitor.cpp" "src/CMakeFiles/giraff_viewer.dir/genericmonitor.cpp.o" "gcc" "src/CMakeFiles/giraff_viewer.dir/genericmonitor.cpp.o.d"
+  "/home/alumno/RoboticaAvanzada3/src/genericworker.cpp" "src/CMakeFiles/giraff_viewer.dir/genericworker.cpp.o" "gcc" "src/CMakeFiles/giraff_viewer.dir/genericworker.cpp.o.d"
+  "/home/alumno/RoboticaAvanzada3/src/giraff_viewer_autogen/mocs_compilation.cpp" "src/CMakeFiles/giraff_viewer.dir/giraff_viewer_autogen/mocs_compilation.cpp.o" "gcc" "src/CMakeFiles/giraff_viewer.dir/giraff_viewer_autogen/mocs_compilation.cpp.o.d"
+  "/home/robocomp/robocomp/classes/grid2d/grid.cpp" "src/CMakeFiles/giraff_viewer.dir/home/robocomp/robocomp/classes/grid2d/grid.cpp.o" "gcc" "src/CMakeFiles/giraff_viewer.dir/home/robocomp/robocomp/classes/grid2d/grid.cpp.o.d"
+  "/home/alumno/RoboticaAvanzada3/src/main.cpp" "src/CMakeFiles/giraff_viewer.dir/main.cpp.o" "gcc" "src/CMakeFiles/giraff_viewer.dir/main.cpp.o.d"
+  "/opt/robocomp/classes/qlog/qlog.cpp" "src/CMakeFiles/giraff_viewer.dir/opt/robocomp/classes/qlog/qlog.cpp.o" "gcc" "src/CMakeFiles/giraff_viewer.dir/opt/robocomp/classes/qlog/qlog.cpp.o.d"
+  "/opt/robocomp/classes/rapplication/rapplication.cpp" "src/CMakeFiles/giraff_viewer.dir/opt/robocomp/classes/rapplication/rapplication.cpp.o" "gcc" "src/CMakeFiles/giraff_viewer.dir/opt/robocomp/classes/rapplication/rapplication.cpp.o.d"
+  "/opt/robocomp/classes/sigwatch/sigwatch.cpp" "src/CMakeFiles/giraff_viewer.dir/opt/robocomp/classes/sigwatch/sigwatch.cpp.o" "gcc" "src/CMakeFiles/giraff_viewer.dir/opt/robocomp/classes/sigwatch/sigwatch.cpp.o.d"
+  "/home/alumno/RoboticaAvanzada3/src/specificmonitor.cpp" "src/CMakeFiles/giraff_viewer.dir/specificmonitor.cpp.o" "gcc" "src/CMakeFiles/giraff_viewer.dir/specificmonitor.cpp.o.d"
+  "/home/alumno/RoboticaAvanzada3/src/specificworker.cpp" "src/CMakeFiles/giraff_viewer.dir/specificworker.cpp.o" "gcc" "src/CMakeFiles/giraff_viewer.dir/specificworker.cpp.o.d"
   )
 
 # Pairs of files generated by the same build rule.
@@ -73,6 +38,7 @@ set(CMAKE_MULTIPLE_OUTPUT_PAIRS
   "/home/alumno/RoboticaAvanzada3/src/DifferentialRobot.h" "/home/alumno/RoboticaAvanzada3/src/DifferentialRobot.cpp"
   "/home/alumno/RoboticaAvanzada3/src/FullPoseEstimation.h" "/home/alumno/RoboticaAvanzada3/src/FullPoseEstimation.cpp"
   "/home/alumno/RoboticaAvanzada3/src/GenericBase.h" "/home/alumno/RoboticaAvanzada3/src/GenericBase.cpp"
+  "/home/alumno/RoboticaAvanzada3/src/HumanCameraBody.h" "/home/alumno/RoboticaAvanzada3/src/HumanCameraBody.cpp"
   "/home/alumno/RoboticaAvanzada3/src/JointMotorSimple.h" "/home/alumno/RoboticaAvanzada3/src/JointMotorSimple.cpp"
   "/home/alumno/RoboticaAvanzada3/src/Laser.h" "/home/alumno/RoboticaAvanzada3/src/Laser.cpp"
   )

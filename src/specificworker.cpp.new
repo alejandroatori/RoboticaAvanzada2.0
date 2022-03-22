@@ -144,6 +144,18 @@ int SpecificWorker::startup_check()
 // RoboCompFullPoseEstimation::FullPoseEuler
 
 /**************************************/
+// From the RoboCompHumanCameraBody you can call this methods:
+// this->humancamerabody_proxy->newPeopleData(...)
+
+/**************************************/
+// From the RoboCompHumanCameraBody you can use this types:
+// RoboCompHumanCameraBody::TImage
+// RoboCompHumanCameraBody::TGroundTruth
+// RoboCompHumanCameraBody::KeyPoint
+// RoboCompHumanCameraBody::Person
+// RoboCompHumanCameraBody::PeopleData
+
+/**************************************/
 // From the RoboCompJointMotorSimple you can call this methods:
 // this->jointmotorsimple_proxy->getMotorParams(...)
 // this->jointmotorsimple_proxy->getMotorState(...)

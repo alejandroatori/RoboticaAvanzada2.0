@@ -33,6 +33,8 @@
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
 #include "/home/robocomp/robocomp/classes/grid2d/grid.h"
+#include "HumanCameraBody.h"
+#include <jsoncpp/json/json.h>
 
 class SpecificWorker : public GenericWorker
 {
@@ -61,9 +63,15 @@ private:
     QGraphicsEllipseItem *laser_in_robot_polygon;
     QPointF last_point;
     std::vector<QGraphicsLineItem *> lines;
-    void draw_laser(const RoboCompLaser::TLaserData &ldata);
-    void cameraSetUp ();
 
+    //Guarda los pares de articulaciones
+    std::vector<std::pair<int, int>> lista_articulaciones;
+
+
+
+    void draw_laser(const RoboCompLaser::TLaserData &ldata);
+    void cameraSetUp (const RoboCompHumanCameraBody::PeopleData &people_data);
+    void drawSkeleton (cv::Mat &image, const RoboCompHumanCameraBody::PeopleData &people_data);
 
     // grid
     int TILE_SIZE = 100;
