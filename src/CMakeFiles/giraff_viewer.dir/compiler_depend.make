@@ -8285,6 +8285,93 @@ src/CMakeFiles/giraff_viewer.dir/giraff_viewer_autogen/mocs_compilation.cpp.o: s
   /usr/include/c++/10/stack \
   /usr/include/c++/10/bits/stl_stack.h \
   /usr/include/jsoncpp/json/writer.h \
+  /usr/include/eigen3/Eigen/Eigen \
+  /usr/include/eigen3/Eigen/Dense \
+  /usr/include/eigen3/Eigen/Core \
+  /usr/include/eigen3/Eigen/LU \
+  /usr/include/eigen3/Eigen/Cholesky \
+  /usr/include/eigen3/Eigen/QR \
+  /usr/include/eigen3/Eigen/SVD \
+  /usr/include/eigen3/Eigen/Geometry \
+  /usr/include/eigen3/Eigen/Eigenvalues \
+  /usr/include/eigen3/Eigen/Sparse \
+  /usr/include/eigen3/Eigen/SparseCore \
+  /usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseUtil.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseMatrixBase.h \
+  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h \
+  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseBinaryOps.h \
+  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h \
+  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h \
+  /usr/include/eigen3/Eigen/src/plugins/BlockMethods.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseAssign.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/CompressedStorage.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/AmbiVector.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseCompressedBase.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseMatrix.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseMap.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/MappedSparseMatrix.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseVector.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseRef.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseCwiseUnaryOp.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseCwiseBinaryOp.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseTranspose.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseBlock.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseDot.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseRedux.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseView.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseDiagonalProduct.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/ConservativeSparseSparseProduct.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseSparseProductWithPruning.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseProduct.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseDenseProduct.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseSelfAdjointView.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseTriangularView.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/TriangularSolver.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparsePermutation.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseFuzzy.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseSolverBase.h \
+  /usr/include/eigen3/Eigen/src/Core/util/ReenableStupidWarnings.h \
+  /usr/include/eigen3/Eigen/OrderingMethods \
+  /usr/include/eigen3/Eigen/src/OrderingMethods/Amd.h \
+  /usr/include/eigen3/Eigen/src/Core/util/NonMPL2.h \
+  /usr/include/eigen3/Eigen/src/OrderingMethods/Ordering.h \
+  /usr/include/eigen3/Eigen/src/OrderingMethods/Eigen_Colamd.h \
+  /usr/include/eigen3/Eigen/SparseCholesky \
+  /usr/include/eigen3/Eigen/src/SparseCholesky/SimplicialCholesky.h \
+  /usr/include/eigen3/Eigen/src/SparseCholesky/SimplicialCholesky_impl.h \
+  /usr/include/eigen3/Eigen/src/Core/util/NonMPL2.h \
+  /usr/include/eigen3/Eigen/SparseLU \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_gemm_kernel.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_Structs.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_SupernodalMatrix.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLUImpl.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseColEtree.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_Memory.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_heap_relax_snode.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_relax_snode.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_pivotL.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_panel_dfs.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_kernel_bmod.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_panel_bmod.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_column_dfs.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_column_bmod.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_copy_to_ucol.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_pruneL.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_Utils.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU.h \
+  /usr/include/eigen3/Eigen/SparseQR \
+  /usr/include/eigen3/Eigen/src/SparseQR/SparseQR.h \
+  /usr/include/eigen3/Eigen/IterativeLinearSolvers \
+  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/SolveWithGuess.h \
+  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/IterativeSolverBase.h \
+  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/BasicPreconditioners.h \
+  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/ConjugateGradient.h \
+  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/LeastSquareConjugateGradient.h \
+  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/BiCGSTAB.h \
+  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/IncompleteLUT.h \
+  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/IncompleteCholesky.h \
+  /usr/include/eigen3/Eigen/Geometry \
   src/giraff_viewer_autogen/WU3NUE3SBC/moc_abstract_graphic_viewer.cpp \
   /opt/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h
 
@@ -10977,6 +11064,93 @@ src/CMakeFiles/giraff_viewer.dir/main.cpp.o: src/main.cpp \
   /usr/include/c++/10/stack \
   /usr/include/c++/10/bits/stl_stack.h \
   /usr/include/jsoncpp/json/writer.h \
+  /usr/include/eigen3/Eigen/Eigen \
+  /usr/include/eigen3/Eigen/Dense \
+  /usr/include/eigen3/Eigen/Core \
+  /usr/include/eigen3/Eigen/LU \
+  /usr/include/eigen3/Eigen/Cholesky \
+  /usr/include/eigen3/Eigen/QR \
+  /usr/include/eigen3/Eigen/SVD \
+  /usr/include/eigen3/Eigen/Geometry \
+  /usr/include/eigen3/Eigen/Eigenvalues \
+  /usr/include/eigen3/Eigen/Sparse \
+  /usr/include/eigen3/Eigen/SparseCore \
+  /usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseUtil.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseMatrixBase.h \
+  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h \
+  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseBinaryOps.h \
+  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h \
+  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h \
+  /usr/include/eigen3/Eigen/src/plugins/BlockMethods.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseAssign.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/CompressedStorage.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/AmbiVector.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseCompressedBase.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseMatrix.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseMap.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/MappedSparseMatrix.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseVector.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseRef.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseCwiseUnaryOp.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseCwiseBinaryOp.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseTranspose.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseBlock.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseDot.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseRedux.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseView.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseDiagonalProduct.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/ConservativeSparseSparseProduct.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseSparseProductWithPruning.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseProduct.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseDenseProduct.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseSelfAdjointView.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseTriangularView.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/TriangularSolver.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparsePermutation.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseFuzzy.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseSolverBase.h \
+  /usr/include/eigen3/Eigen/src/Core/util/ReenableStupidWarnings.h \
+  /usr/include/eigen3/Eigen/OrderingMethods \
+  /usr/include/eigen3/Eigen/src/OrderingMethods/Amd.h \
+  /usr/include/eigen3/Eigen/src/Core/util/NonMPL2.h \
+  /usr/include/eigen3/Eigen/src/OrderingMethods/Ordering.h \
+  /usr/include/eigen3/Eigen/src/OrderingMethods/Eigen_Colamd.h \
+  /usr/include/eigen3/Eigen/SparseCholesky \
+  /usr/include/eigen3/Eigen/src/SparseCholesky/SimplicialCholesky.h \
+  /usr/include/eigen3/Eigen/src/SparseCholesky/SimplicialCholesky_impl.h \
+  /usr/include/eigen3/Eigen/src/Core/util/NonMPL2.h \
+  /usr/include/eigen3/Eigen/SparseLU \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_gemm_kernel.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_Structs.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_SupernodalMatrix.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLUImpl.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseColEtree.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_Memory.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_heap_relax_snode.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_relax_snode.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_pivotL.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_panel_dfs.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_kernel_bmod.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_panel_bmod.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_column_dfs.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_column_bmod.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_copy_to_ucol.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_pruneL.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_Utils.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU.h \
+  /usr/include/eigen3/Eigen/SparseQR \
+  /usr/include/eigen3/Eigen/src/SparseQR/SparseQR.h \
+  /usr/include/eigen3/Eigen/IterativeLinearSolvers \
+  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/SolveWithGuess.h \
+  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/IterativeSolverBase.h \
+  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/BasicPreconditioners.h \
+  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/ConjugateGradient.h \
+  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/LeastSquareConjugateGradient.h \
+  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/BiCGSTAB.h \
+  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/IncompleteLUT.h \
+  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/IncompleteCholesky.h \
+  /usr/include/eigen3/Eigen/Geometry \
   src/specificmonitor.h \
   src/commonbehaviorI.h
 
@@ -15684,7 +15858,94 @@ src/CMakeFiles/giraff_viewer.dir/specificworker.cpp.o: src/specificworker.cpp \
   /usr/include/jsoncpp/json/features.h \
   /usr/include/c++/10/stack \
   /usr/include/c++/10/bits/stl_stack.h \
-  /usr/include/jsoncpp/json/writer.h
+  /usr/include/jsoncpp/json/writer.h \
+  /usr/include/eigen3/Eigen/Eigen \
+  /usr/include/eigen3/Eigen/Dense \
+  /usr/include/eigen3/Eigen/Core \
+  /usr/include/eigen3/Eigen/LU \
+  /usr/include/eigen3/Eigen/Cholesky \
+  /usr/include/eigen3/Eigen/QR \
+  /usr/include/eigen3/Eigen/SVD \
+  /usr/include/eigen3/Eigen/Geometry \
+  /usr/include/eigen3/Eigen/Eigenvalues \
+  /usr/include/eigen3/Eigen/Sparse \
+  /usr/include/eigen3/Eigen/SparseCore \
+  /usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseUtil.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseMatrixBase.h \
+  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseUnaryOps.h \
+  /usr/include/eigen3/Eigen/src/plugins/CommonCwiseBinaryOps.h \
+  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseUnaryOps.h \
+  /usr/include/eigen3/Eigen/src/plugins/MatrixCwiseBinaryOps.h \
+  /usr/include/eigen3/Eigen/src/plugins/BlockMethods.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseAssign.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/CompressedStorage.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/AmbiVector.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseCompressedBase.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseMatrix.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseMap.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/MappedSparseMatrix.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseVector.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseRef.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseCwiseUnaryOp.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseCwiseBinaryOp.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseTranspose.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseBlock.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseDot.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseRedux.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseView.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseDiagonalProduct.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/ConservativeSparseSparseProduct.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseSparseProductWithPruning.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseProduct.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseDenseProduct.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseSelfAdjointView.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseTriangularView.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/TriangularSolver.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparsePermutation.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseFuzzy.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseSolverBase.h \
+  /usr/include/eigen3/Eigen/src/Core/util/ReenableStupidWarnings.h \
+  /usr/include/eigen3/Eigen/OrderingMethods \
+  /usr/include/eigen3/Eigen/src/OrderingMethods/Amd.h \
+  /usr/include/eigen3/Eigen/src/Core/util/NonMPL2.h \
+  /usr/include/eigen3/Eigen/src/OrderingMethods/Ordering.h \
+  /usr/include/eigen3/Eigen/src/OrderingMethods/Eigen_Colamd.h \
+  /usr/include/eigen3/Eigen/SparseCholesky \
+  /usr/include/eigen3/Eigen/src/SparseCholesky/SimplicialCholesky.h \
+  /usr/include/eigen3/Eigen/src/SparseCholesky/SimplicialCholesky_impl.h \
+  /usr/include/eigen3/Eigen/src/Core/util/NonMPL2.h \
+  /usr/include/eigen3/Eigen/SparseLU \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_gemm_kernel.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_Structs.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_SupernodalMatrix.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLUImpl.h \
+  /usr/include/eigen3/Eigen/src/SparseCore/SparseColEtree.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_Memory.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_heap_relax_snode.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_relax_snode.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_pivotL.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_panel_dfs.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_kernel_bmod.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_panel_bmod.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_column_dfs.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_column_bmod.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_copy_to_ucol.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_pruneL.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU_Utils.h \
+  /usr/include/eigen3/Eigen/src/SparseLU/SparseLU.h \
+  /usr/include/eigen3/Eigen/SparseQR \
+  /usr/include/eigen3/Eigen/src/SparseQR/SparseQR.h \
+  /usr/include/eigen3/Eigen/IterativeLinearSolvers \
+  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/SolveWithGuess.h \
+  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/IterativeSolverBase.h \
+  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/BasicPreconditioners.h \
+  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/ConjugateGradient.h \
+  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/LeastSquareConjugateGradient.h \
+  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/BiCGSTAB.h \
+  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/IncompleteLUT.h \
+  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/IncompleteCholesky.h \
+  /usr/include/eigen3/Eigen/Geometry
 
 
 src/specificmonitor.cpp:
@@ -15714,8 +15975,6 @@ src/specificmonitor.cpp:
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwizard.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwhatsthis.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qundoview.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qundostack.h:
 
@@ -15781,10 +16040,6 @@ src/specificmonitor.cpp:
 
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLayout:
 
-/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qformlayout.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qfontcombobox.h:
-
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qfocusframe.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qerrormessage.h:
@@ -15841,13 +16096,7 @@ src/main.cpp:
 
 /usr/include/c++/10/pstl/glue_algorithm_impl.h:
 
-/usr/include/c++/10/pstl/numeric_impl.h:
-
 /usr/include/c++/10/pstl/parallel_impl.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlistwidget.h:
-
-/usr/include/tbb/tbb_exception.h:
 
 /usr/include/tbb/atomic.h:
 
@@ -15868,8 +16117,6 @@ src/main.cpp:
 /usr/include/x86_64-linux-gnu/asm/unistd.h:
 
 /usr/include/x86_64-linux-gnu/sys/syscall.h:
-
-/usr/include/tbb/machine/gcc_ia32_common.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qdatetimeedit.h:
 
@@ -15902,6 +16149,104 @@ src/main.cpp:
 /home/robocomp/robocomp/classes/grid2d/grid.cpp:
 
 src/giraff_viewer_autogen/WU3NUE3SBC/moc_abstract_graphic_viewer.cpp:
+
+/usr/include/eigen3/Eigen/src/IterativeLinearSolvers/IncompleteCholesky.h:
+
+/usr/include/eigen3/Eigen/src/IterativeLinearSolvers/IncompleteLUT.h:
+
+/usr/include/c++/10/pstl/numeric_impl.h:
+
+/usr/include/eigen3/Eigen/src/IterativeLinearSolvers/LeastSquareConjugateGradient.h:
+
+/usr/include/eigen3/Eigen/src/IterativeLinearSolvers/ConjugateGradient.h:
+
+/usr/include/eigen3/Eigen/src/IterativeLinearSolvers/IterativeSolverBase.h:
+
+/usr/include/eigen3/Eigen/src/SparseQR/SparseQR.h:
+
+/usr/include/eigen3/Eigen/SparseQR:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qundoview.h:
+
+/usr/include/eigen3/Eigen/src/SparseLU/SparseLU.h:
+
+/usr/include/eigen3/Eigen/src/SparseLU/SparseLU_Utils.h:
+
+/usr/include/eigen3/Eigen/src/SparseLU/SparseLU_copy_to_ucol.h:
+
+/usr/include/eigen3/Eigen/src/SparseLU/SparseLU_column_dfs.h:
+
+/usr/include/eigen3/Eigen/src/SparseLU/SparseLU_kernel_bmod.h:
+
+/usr/include/eigen3/Eigen/src/SparseCore/SparseColEtree.h:
+
+/usr/include/eigen3/Eigen/src/SparseLU/SparseLUImpl.h:
+
+/usr/include/eigen3/Eigen/src/SparseLU/SparseLU_SupernodalMatrix.h:
+
+/usr/include/eigen3/Eigen/SparseCholesky:
+
+/usr/include/eigen3/Eigen/src/OrderingMethods/Eigen_Colamd.h:
+
+/usr/include/eigen3/Eigen/src/OrderingMethods/Amd.h:
+
+/usr/include/eigen3/Eigen/OrderingMethods:
+
+/usr/include/eigen3/Eigen/src/Core/util/ReenableStupidWarnings.h:
+
+/usr/include/eigen3/Eigen/src/SparseCore/SparseFuzzy.h:
+
+/usr/include/eigen3/Eigen/src/SparseCore/TriangularSolver.h:
+
+/usr/include/eigen3/Eigen/src/SparseCore/SparseTriangularView.h:
+
+/usr/include/eigen3/Eigen/src/SparseCore/SparseProduct.h:
+
+/usr/include/eigen3/Eigen/src/SparseCore/SparseSparseProductWithPruning.h:
+
+/usr/include/eigen3/Eigen/src/SparseCore/ConservativeSparseSparseProduct.h:
+
+/usr/include/eigen3/Eigen/src/SparseCore/SparseRedux.h:
+
+/usr/include/eigen3/Eigen/src/SparseCore/SparseDot.h:
+
+/usr/include/eigen3/Eigen/src/SparseCore/SparseBlock.h:
+
+/usr/include/eigen3/Eigen/src/SparseCore/SparseCwiseUnaryOp.h:
+
+/usr/include/eigen3/Eigen/src/SparseCore/SparseRef.h:
+
+/usr/include/eigen3/Eigen/src/SparseCore/SparseVector.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qfontcombobox.h:
+
+/usr/include/eigen3/Eigen/src/SparseCore/MappedSparseMatrix.h:
+
+/usr/include/eigen3/Eigen/src/SparseCore/SparseMatrix.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlistwidget.h:
+
+/usr/include/tbb/tbb_exception.h:
+
+/usr/include/eigen3/Eigen/src/SparseCore/AmbiVector.h:
+
+/usr/include/eigen3/Eigen/src/SparseCore/SparseMatrixBase.h:
+
+/usr/include/eigen3/Eigen/src/SparseCore/SparseUtil.h:
+
+/usr/include/eigen3/Eigen/SparseCore:
+
+/usr/include/eigen3/Eigen/Eigenvalues:
+
+/usr/include/eigen3/Eigen/QR:
+
+/usr/include/tbb/machine/gcc_ia32_common.h:
+
+/usr/include/eigen3/Eigen/Dense:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qformlayout.h:
+
+/usr/include/eigen3/Eigen/Eigen:
 
 /usr/include/jsoncpp/json/writer.h:
 
@@ -15947,7 +16292,11 @@ src/giraff_viewer_autogen/WU3NUE3SBC/moc_abstract_graphic_viewer.cpp:
 
 /usr/include/Eigen/src/Geometry/Scaling.h:
 
+/usr/include/eigen3/Eigen/Cholesky:
+
 /usr/include/Eigen/src/Geometry/Translation.h:
+
+/usr/include/eigen3/Eigen/src/SparseCore/SparseCompressedBase.h:
 
 /usr/include/Eigen/src/Geometry/AngleAxis.h:
 
@@ -16023,6 +16372,8 @@ src/giraff_viewer_autogen/include/moc_sigwatch.cpp:
 
 /usr/include/c++/10/pstl/parallel_backend.h:
 
+/usr/include/eigen3/Eigen/src/SparseCore/SparseCwiseBinaryOp.h:
+
 /usr/include/Eigen/src/Core/SolveTriangular.h:
 
 /usr/include/Eigen/src/Core/products/GeneralBlockPanelKernel.h:
@@ -16049,6 +16400,10 @@ src/giraff_viewer_autogen/include/moc_sigwatch.cpp:
 
 /usr/include/Eigen/src/Core/Solve.h:
 
+/usr/include/eigen3/Eigen/src/SparseLU/SparseLU_pruneL.h:
+
+/usr/include/eigen3/Eigen/src/SparseLU/SparseLU_panel_bmod.h:
+
 /usr/include/Eigen/src/Core/CommaInitializer.h:
 
 /usr/include/Eigen/src/Core/Swap.h:
@@ -16060,6 +16415,8 @@ src/giraff_viewer_autogen/include/moc_sigwatch.cpp:
 /usr/include/Eigen/src/Core/DiagonalMatrix.h:
 
 /usr/include/Eigen/src/Core/Transpose.h:
+
+/usr/include/eigen3/Eigen/src/SparseLU/SparseLU_panel_dfs.h:
 
 /usr/include/Eigen/src/Core/products/Parallelizer.h:
 
@@ -16116,6 +16473,8 @@ src/giraff_viewer_autogen/include/moc_sigwatch.cpp:
 /usr/include/Eigen/src/Core/functors/TernaryFunctors.h:
 
 /usr/include/Eigen/src/Core/arch/CUDA/TypeCasting.h:
+
+/usr/include/eigen3/Eigen/Core:
 
 /usr/include/Eigen/src/Core/arch/CUDA/PacketMathHalf.h:
 
@@ -16183,6 +16542,8 @@ src/giraff_viewer_autogen/include/moc_sigwatch.cpp:
 
 /usr/include/opencv4/opencv2/imgcodecs.hpp:
 
+/usr/include/eigen3/Eigen/Geometry:
+
 /usr/include/opencv4/opencv2/core/ovx.hpp:
 
 /usr/include/opencv4/opencv2/core/utility.hpp:
@@ -16192,6 +16553,8 @@ src/giraff_viewer_autogen/include/moc_sigwatch.cpp:
 /usr/include/opencv4/opencv2/core/operations.hpp:
 
 /usr/include/opencv4/opencv2/core/mat.inl.hpp:
+
+/usr/include/eigen3/Eigen/src/SparseCore/SparseAssign.h:
 
 /usr/include/Eigen/src/Core/arch/SSE/Complex.h:
 
@@ -16206,6 +16569,8 @@ src/giraff_viewer_autogen/include/moc_sigwatch.cpp:
 /usr/include/opencv4/opencv2/core/types.hpp:
 
 /usr/include/opencv4/opencv2/core/saturate.hpp:
+
+/usr/include/eigen3/Eigen/IterativeLinearSolvers:
 
 /usr/include/opencv4/opencv2/core/matx.hpp:
 
@@ -16334,6 +16699,8 @@ src/genericmonitor.h:
 /usr/include/x86_64-linux-gnu/qt5/QtGui/qstandarditemmodel.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtGui/QTransform:
+
+/usr/include/eigen3/Eigen/src/SparseLU/SparseLU_pivotL.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/QList:
 
@@ -16469,6 +16836,8 @@ src/specificworker.cpp:
 
 /usr/include/x86_64-linux-gnu/qt5/QtGui/qtransform.h:
 
+/usr/include/eigen3/Eigen/src/SparseCholesky/SimplicialCholesky_impl.h:
+
 /usr/include/x86_64-linux-gnu/qt5/QtGui/qpolygon.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtGui/qmatrix.h:
@@ -16498,6 +16867,8 @@ src/specificworker.cpp:
 /usr/include/x86_64-linux-gnu/qt5/QtGui/QtGui:
 
 /usr/include/boost/format/detail/unset_macros.hpp:
+
+/usr/include/eigen3/Eigen/src/IterativeLinearSolvers/BiCGSTAB.h:
 
 /usr/include/boost/format/free_funcs.hpp:
 
@@ -16534,6 +16905,8 @@ src/specificworker.cpp:
 src/specificmonitor.h:
 
 /usr/include/boost/predef/make.h:
+
+/usr/include/eigen3/Eigen/src/SparseCore/SparseSelfAdjointView.h:
 
 /usr/include/boost/smart_ptr/detail/yield_k.hpp:
 
@@ -16779,6 +17152,8 @@ src/CameraSimple.h:
 
 /usr/include/Ice/OutputStream.h:
 
+/usr/include/eigen3/Eigen/src/SparseCore/SparseView.h:
+
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qobjectcleanuphandler.h:
 
 /usr/include/Ice/OutgoingAsyncF.h:
@@ -16862,6 +17237,8 @@ src/CameraSimple.h:
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qhash.h:
 
 /usr/include/IceUtil/Time.h:
+
+/usr/include/eigen3/Eigen/src/SparseCore/SparsePermutation.h:
 
 /usr/include/IceUtil/ThreadException.h:
 
@@ -17055,6 +17432,8 @@ src/commonbehaviorI.cpp:
 
 /usr/include/boost/core/swap.hpp:
 
+/usr/include/eigen3/Eigen/LU:
+
 /usr/include/boost/core/checked_delete.hpp:
 
 /usr/include/c++/10/bits/stream_iterator.h:
@@ -17174,6 +17553,8 @@ src/CameraRGBDSimple.cpp:
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qdir.h:
 
 /usr/include/IceUtil/Handle.h:
+
+/usr/include/eigen3/Eigen/src/SparseCore/SparseTranspose.h:
 
 /usr/include/c++/10/bits/predefined_ops.h:
 
@@ -17405,7 +17786,11 @@ src/JointMotorSimple.cpp:
 
 /usr/include/c++/10/cctype:
 
+/usr/include/eigen3/Eigen/SparseLU:
+
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
+
+/usr/include/eigen3/Eigen/src/OrderingMethods/Ordering.h:
 
 /usr/include/Ice/Locator.h:
 
@@ -17452,6 +17837,8 @@ src/JointMotorSimple.cpp:
 /usr/include/c++/10/thread:
 
 /usr/include/c++/10/bits/basic_string.h:
+
+/usr/include/eigen3/Eigen/src/SparseCore/SparseDiagonalProduct.h:
 
 /usr/include/x86_64-linux-gnu/bits/cpu-set.h:
 
@@ -17526,6 +17913,8 @@ src/JointMotorSimple.cpp:
 /usr/include/c++/10/cstring:
 
 /usr/include/x86_64-linux-gnu/sys/cdefs.h:
+
+/usr/include/eigen3/Eigen/src/Core/util/NonMPL2.h:
 
 /usr/include/c++/10/bits/functexcept.h:
 
@@ -17670,6 +18059,8 @@ src/Laser.cpp:
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qtcore-config.h:
 
 /usr/include/c++/10/locale:
+
+/usr/include/eigen3/Eigen/src/SparseLU/SparseLU_Structs.h:
 
 /usr/include/c++/10/stop_token:
 
@@ -18029,6 +18420,8 @@ src/config.h:
 
 /usr/include/Ice/UUID.h:
 
+/usr/include/eigen3/Eigen/src/SparseLU/SparseLU_relax_snode.h:
+
 /usr/include/x86_64-linux-gnu/bits/fp-logb.h:
 
 /usr/include/opencv4/opencv2/core/cvstd.hpp:
@@ -18048,6 +18441,8 @@ src/genericworker.h:
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qprocessordetection.h:
 
 /usr/include/boost/type_traits/is_pointer.hpp:
+
+/usr/include/eigen3/Eigen/src/SparseLU/SparseLU_column_bmod.h:
 
 /usr/include/x86_64-linux-gnu/bits/select.h:
 
@@ -18076,6 +18471,8 @@ src/genericworker.h:
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractanimation.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qstring.h:
+
+/usr/include/eigen3/Eigen/src/IterativeLinearSolvers/BasicPreconditioners.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qchar.h:
 
@@ -18144,6 +18541,10 @@ src/Laser.h:
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QSplitter:
 
 /usr/include/limits.h:
+
+/usr/include/eigen3/Eigen/src/SparseLU/SparseLU_Memory.h:
+
+/usr/include/eigen3/Eigen/Sparse:
 
 /usr/include/boost/type_traits/is_pod.hpp:
 
@@ -18234,6 +18635,8 @@ src/Laser.h:
 /usr/include/boost/smart_ptr/detail/shared_count.hpp:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qbuffer.h:
+
+/usr/include/eigen3/Eigen/src/IterativeLinearSolvers/SolveWithGuess.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qcache.h:
 
@@ -18349,6 +18752,8 @@ src/Laser.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/10/include/avx512fintrin.h:
 
+/usr/include/eigen3/Eigen/src/SparseCore/SparseDenseProduct.h:
+
 /usr/lib/gcc/x86_64-linux-gnu/10/include/avx512pfintrin.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/10/include/avx512cdintrin.h:
@@ -18356,6 +18761,8 @@ src/Laser.h:
 /usr/lib/gcc/x86_64-linux-gnu/10/include/avx512vlintrin.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/10/include/avx512bwintrin.h:
+
+/usr/include/eigen3/Eigen/src/SparseCore/SparseSolverBase.h:
 
 /usr/include/c++/10/bits/random.h:
 
@@ -18372,6 +18779,8 @@ src/Laser.h:
 /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/10/include/avx512vldqintrin.h:
+
+/usr/include/eigen3/Eigen/src/SparseCholesky/SimplicialCholesky.h:
 
 /usr/include/boost/type_traits/is_member_function_pointer.hpp:
 
@@ -18433,6 +18842,8 @@ src/Laser.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/10/include/waitpkgintrin.h:
 
+/usr/include/eigen3/Eigen/src/SparseCore/SparseMap.h:
+
 /usr/include/c++/10/tr1/modified_bessel_func.tcc:
 
 /usr/include/boost/move/detail/config_end.hpp:
@@ -18466,6 +18877,8 @@ src/Laser.h:
 /usr/include/boost/assert.hpp:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qendian.h:
+
+/usr/include/eigen3/Eigen/SVD:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qeventtransition.h:
 
@@ -18512,6 +18925,8 @@ src/Laser.h:
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qfuturesynchronizer.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qisenum.h:
+
+/usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/QEvent:
 
@@ -18571,6 +18986,8 @@ src/Laser.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractspinbox.h:
 
+/usr/include/eigen3/Eigen/src/SparseCore/CompressedStorage.h:
+
 /usr/include/c++/10/tr1/beta_function.tcc:
 
 /usr/include/Eigen/src/Core/CwiseUnaryView.h:
@@ -18582,6 +18999,8 @@ src/Laser.h:
 /usr/include/x86_64-linux-gnu/qt5/QtGui/qdesktopservices.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qmessageauthenticationcode.h:
+
+/usr/include/eigen3/Eigen/src/SparseLU/SparseLU_heap_relax_snode.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qoperatingsystemversion.h:
 
@@ -18698,6 +19117,8 @@ src/Laser.h:
 /usr/include/boost/config/detail/select_stdlib_config.hpp:
 
 /usr/include/boost/type_traits/has_trivial_move_assign.hpp:
+
+/usr/include/eigen3/Eigen/src/SparseLU/SparseLU_gemm_kernel.h:
 
 /usr/include/boost/config/detail/select_platform_config.hpp:
 

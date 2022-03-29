@@ -92,7 +92,6 @@ void SpecificWorker::initialize(int period)
         vector_articulaciones[i].second = id_articulaciones[i][1].asInt();
     }
 
-    //Cositas
 }
 
 void SpecificWorker::cameraSetUp (const RoboCompHumanCameraBody::PeopleData &people_data)
@@ -158,14 +157,20 @@ void SpecificWorker::cameraSetUp (const RoboCompHumanCameraBody::PeopleData &peo
 void SpecificWorker::compute()
 {
     auto people = humancamerabody_proxy->newPeopleData();
+    RoboCompFullPoseEstimation::FullPoseEuler bState;
+    try {
+        bState = fullposeestimation_proxy->getFullPoseEuler();
+    }
+    catch(const Ice::Exception &e){ std::cout << e.what() << " POSE ERROR" << std::endl;}
+
     cameraSetUp(people);
-    posicionRobot();
-    drawPeopleMap(people);
+    posicionRobot(bState);
+    drawPeopleMap(people, bState);
 
 
 }
 
-void SpecificWorker::drawPeopleMap (const RoboCompHumanCameraBody::PeopleData &people){
+void SpecificWorker::drawPeopleMap (const RoboCompHumanCameraBody::PeopleData &people, RoboCompFullPoseEstimation::FullPoseEuler bState){
     QColor color("Magenta");
     static QGraphicsItem *target_elipse = nullptr;
     if(target_elipse != nullptr)
@@ -176,10 +181,26 @@ void SpecificWorker::drawPeopleMap (const RoboCompHumanCameraBody::PeopleData &p
 //        for (const auto &person : people.peoplelist){
             if (person.joints.contains(std::to_string(17))){
                 auto cd = person.joints.at("17");
-                auto x = cd.x * 100;
-                auto y = cd.y * 1000;
-                auto target_r =laser_in_robot_polygon->mapToScene(QPointF(x,y));
-                target_elipse = viewer->scene.addEllipse(target_r.x()-100, target_r.y()-100, 200, 200, QPen(color, 30), QBrush(color));
+                auto x = cd.x * 500;
+                float y;
+                //qInfo() << __FUNCTION__ << "y = " << cd.y << endl;
+
+                if (cd.y >= 0){
+                    y = cd.y * 2000;
+                }
+                else{
+                    y = 0;
+                    //qInfo() << __FUNCTION__ << "ta cerca" << endl;
+                }
+
+
+                x += bState.x;
+                y += bState.y;
+
+//                std::cout << "x -> " << x_axis_rotation_matrix.axis().x() << "   y -> "  << std::endl;
+
+                auto target_r = laser_in_robot_polygon->mapToScene(QPointF(x,y));
+                target_elipse = viewer->scene.addEllipse(target_r.x(), -target_r.y(), 200, 200, QPen(color, 30), QBrush(color));
                 target_elipse->setZValue(3);
 
                 this->target.active = true;
@@ -195,19 +216,12 @@ void SpecificWorker::drawPeopleMap (const RoboCompHumanCameraBody::PeopleData &p
     }
 }
 
-void SpecificWorker::posicionRobot (){
-    try
-    {
-        RoboCompFullPoseEstimation::FullPoseEuler bState;
-        bState = fullposeestimation_proxy->getFullPoseEuler();
-
+void SpecificWorker::posicionRobot (RoboCompFullPoseEstimation::FullPoseEuler bState){
         robot_polygon->setRotation(bState.rz*180/M_PI);
         robot_polygon->setPos(bState.x, bState.y);
 
         pos_x->display(bState.x);
         pos_y->display(bState.z);
-    }
-    catch(const Ice::Exception &e){ std::cout << e.what() << " POSE ERROR" << std::endl;}
 }
 
 void SpecificWorker::drawSkeleton (cv::Mat &image, const RoboCompHumanCameraBody::PeopleData &people_data){
@@ -221,8 +235,14 @@ void SpecificWorker::drawSkeleton (cv::Mat &image, const RoboCompHumanCameraBody
                 auto joint1 = person.joints.at(std::to_string(name1));
                 auto joint2 = person.joints.at(std::to_string(name2));
                 cv::line(image, cv::Point(joint1.i, joint1.j), cv::Point(joint2.i, joint2.j), cv::Scalar(0, 255, 0), 2);
+
+            }
+            if (person.joints.contains(std::to_string(17))){
+                auto cuello = person.joints.at(std::to_string(17));
+                cv::circle(image, cv::Point (cuello.i, cuello.j), 7, cv::Scalar (0, 0, 0), 2);      //cv::FILLED
             }
         }
+
     }
 }
 

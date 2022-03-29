@@ -35,6 +35,8 @@
 #include "/home/robocomp/robocomp/classes/grid2d/grid.h"
 #include "HumanCameraBody.h"
 #include <jsoncpp/json/json.h>
+#include <eigen3/Eigen/Eigen>
+#include <eigen3/Eigen/Geometry>
 
 
 class SpecificWorker : public GenericWorker
@@ -79,8 +81,8 @@ private:
     void cameraSetUp (const RoboCompHumanCameraBody::PeopleData &people_data);
     void drawSkeleton (cv::Mat &image, const RoboCompHumanCameraBody::PeopleData &people_data);
     void setRobotSpeed(float speed, float rot);
-    void posicionRobot ();
-    void drawPeopleMap (const RoboCompHumanCameraBody::PeopleData &people);
+    void posicionRobot (RoboCompFullPoseEstimation::FullPoseEuler bState);
+    void drawPeopleMap (const RoboCompHumanCameraBody::PeopleData &people, RoboCompFullPoseEstimation::FullPoseEuler bState);
 
     ////////////////////////////////////////////////////////////////////////////////////////
     void draw_laser(const RoboCompLaser::TLaserData &ldata);
@@ -97,6 +99,11 @@ private:
     Target target;
     float dist;
     float beta;
+
+    //matriz de rotacion
+    //https://eigen.tuxfamily.org/dox/classEigen_1_1AngleAxis.html
+    Eigen::AngleAxis<float> x_axis_rotation_matrix = Eigen::AngleAxisf (0.414, Eigen::Vector3f::UnitX());
+//    Eigen::AngleAxis<float> z_axis_rotation_matrix = Eigen::AngleAxisf (servo_position, Eigen::Vector3f::UnitZ());
 
 };
 
