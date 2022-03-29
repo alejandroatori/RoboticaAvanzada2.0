@@ -36,6 +36,7 @@
 #include "HumanCameraBody.h"
 #include <jsoncpp/json/json.h>
 
+
 class SpecificWorker : public GenericWorker
 {
 Q_OBJECT
@@ -96,6 +97,7 @@ private:
     Target target;
     float dist;
     float beta;
+
 };
 
 #endif

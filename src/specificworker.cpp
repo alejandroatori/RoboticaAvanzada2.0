@@ -91,6 +91,8 @@ void SpecificWorker::initialize(int period)
         vector_articulaciones[i].first = id_articulaciones[i][0].asInt();
         vector_articulaciones[i].second = id_articulaciones[i][1].asInt();
     }
+
+    //Cositas
 }
 
 void SpecificWorker::cameraSetUp (const RoboCompHumanCameraBody::PeopleData &people_data)
@@ -174,7 +176,7 @@ void SpecificWorker::drawPeopleMap (const RoboCompHumanCameraBody::PeopleData &p
 //        for (const auto &person : people.peoplelist){
             if (person.joints.contains(std::to_string(17))){
                 auto cd = person.joints.at("17");
-                auto x = cd.x * 1000;
+                auto x = cd.x * 100;
                 auto y = cd.y * 1000;
                 auto target_r =laser_in_robot_polygon->mapToScene(QPointF(x,y));
                 target_elipse = viewer->scene.addEllipse(target_r.x()-100, target_r.y()-100, 200, 200, QPen(color, 30), QBrush(color));
