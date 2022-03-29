@@ -83,14 +83,13 @@ void SpecificWorker::initialize(int period)
     Json::Value objeto_json;
 
     reader.parse(human_body_parts_file, objeto_json);
-    const Json::Value &cadena_clave = objeto_json["keypoints"];
-    const Json::Value &cadena_valor = objeto_json["skeleton"];
+    const Json::Value &id_articulaciones = objeto_json["skeleton"];
 
-    lista_articulaciones.resize(cadena_valor.size());
+    vector_articulaciones.resize(id_articulaciones.size());
 
-    for (int i = 0; i < cadena_valor.size(); i++) {
-        lista_articulaciones[i].first = cadena_valor[i][0].asInt();
-        lista_articulaciones[i].second = cadena_valor[i][1].asInt();
+    for (int i = 0; i < id_articulaciones.size(); i++) {
+        vector_articulaciones[i].first = id_articulaciones[i][0].asInt();
+        vector_articulaciones[i].second = id_articulaciones[i][1].asInt();
     }
 }
 
@@ -159,6 +158,39 @@ void SpecificWorker::compute()
     auto people = humancamerabody_proxy->newPeopleData();
     cameraSetUp(people);
     posicionRobot();
+    drawPeopleMap(people);
+
+
+}
+
+void SpecificWorker::drawPeopleMap (const RoboCompHumanCameraBody::PeopleData &people){
+    QColor color("Magenta");
+    static QGraphicsItem *target_elipse = nullptr;
+    if(target_elipse != nullptr)
+        viewer->scene.removeItem(target_elipse);
+
+    if (!people.peoplelist.empty()){
+        const auto &person = people.peoplelist[0];
+//        for (const auto &person : people.peoplelist){
+            if (person.joints.contains(std::to_string(17))){
+                auto cd = person.joints.at("17");
+                auto x = cd.x * 1000;
+                auto y = cd.y * 1000;
+                auto target_r =laser_in_robot_polygon->mapToScene(QPointF(x,y));
+                target_elipse = viewer->scene.addEllipse(target_r.x()-100, target_r.y()-100, 200, 200, QPen(color, 30), QBrush(color));
+                target_elipse->setZValue(3);
+
+                this->target.active = true;
+                this->target.dest = QPointF (x, y);
+            }
+            else{
+                this->target.active = false;
+            }
+//        }
+    }
+    else{
+        this->target.active = false;
+    }
 }
 
 void SpecificWorker::posicionRobot (){
@@ -179,7 +211,7 @@ void SpecificWorker::posicionRobot (){
 void SpecificWorker::drawSkeleton (cv::Mat &image, const RoboCompHumanCameraBody::PeopleData &people_data){
     for( const auto &person : people_data.peoplelist)
     {
-        for(const auto &[name1, name2] :  lista_articulaciones)
+        for(const auto &[name1, name2] :  vector_articulaciones)
         {
             if(person.joints.contains(std::to_string(name1)) and person.joints.contains(std::to_string(name2)))
             {

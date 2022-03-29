@@ -70,7 +70,7 @@ private:
     std::vector<QGraphicsLineItem *> lines;
 
     //Guarda los pares de articulaciones
-    std::vector<std::pair<int, int>> lista_articulaciones;
+    std::vector<std::pair<int, int>> vector_articulaciones;
 
 
 
@@ -79,6 +79,7 @@ private:
     void drawSkeleton (cv::Mat &image, const RoboCompHumanCameraBody::PeopleData &people_data);
     void setRobotSpeed(float speed, float rot);
     void posicionRobot ();
+    void drawPeopleMap (const RoboCompHumanCameraBody::PeopleData &people);
 
     ////////////////////////////////////////////////////////////////////////////////////////
     void draw_laser(const RoboCompLaser::TLaserData &ldata);
