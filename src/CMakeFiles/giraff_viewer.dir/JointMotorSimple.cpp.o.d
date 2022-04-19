@@ -1,7 +1,7 @@
 src/CMakeFiles/giraff_viewer.dir/JointMotorSimple.cpp.o: \
- /home/alumno/RoboticaAvanzada3/src/JointMotorSimple.cpp \
+ /home/alumno/RoboticaAvanzada/src/JointMotorSimple.cpp \
  /usr/include/stdc-predef.h \
- /home/alumno/RoboticaAvanzada3/src/JointMotorSimple.h \
+ /home/alumno/RoboticaAvanzada/src/JointMotorSimple.h \
  /usr/include/IceUtil/PushDisableWarnings.h /usr/include/Ice/ProxyF.h \
  /usr/include/Ice/Config.h /usr/include/IceUtil/Config.h \
  /usr/include/c++/10/stdlib.h /usr/include/c++/10/cstdlib \

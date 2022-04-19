@@ -1,7 +1,7 @@
 src/CMakeFiles/giraff_viewer.dir/commonbehaviorI.cpp.o: \
- /home/alumno/RoboticaAvanzada3/src/commonbehaviorI.cpp \
+ /home/alumno/RoboticaAvanzada/src/commonbehaviorI.cpp \
  /usr/include/stdc-predef.h \
- /home/alumno/RoboticaAvanzada3/src/commonbehaviorI.h \
+ /home/alumno/RoboticaAvanzada/src/commonbehaviorI.h \
  /usr/include/Ice/Ice.h /usr/include/IceUtil/PushDisableWarnings.h \
  /usr/include/Ice/Config.h /usr/include/IceUtil/Config.h \
  /usr/include/c++/10/stdlib.h /usr/include/c++/10/cstdlib \
@@ -278,10 +278,10 @@ src/CMakeFiles/giraff_viewer.dir/commonbehaviorI.cpp.o: \
  /usr/include/IceUtil/StringUtil.h /usr/include/iconv.h \
  /usr/include/langinfo.h /usr/include/nl_types.h /usr/include/Ice/UUID.h \
  /usr/include/IceUtil/UUID.h \
- /home/alumno/RoboticaAvanzada3/src/CommonBehavior.h \
- /home/alumno/RoboticaAvanzada3/src/config.h \
- /home/alumno/RoboticaAvanzada3/src/genericworker.h \
- /home/alumno/RoboticaAvanzada3/src/config.h \
+ /home/alumno/RoboticaAvanzada/src/CommonBehavior.h \
+ /home/alumno/RoboticaAvanzada/src/config.h \
+ /home/alumno/RoboticaAvanzada/src/genericworker.h \
+ /home/alumno/RoboticaAvanzada/src/config.h \
  /opt/robocomp/classes/qlog/qlog.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QtCore \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QtCoreDepends \
@@ -1061,7 +1061,7 @@ src/CMakeFiles/giraff_viewer.dir/commonbehaviorI.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qvector4d.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtguiversion.h \
- /home/alumno/RoboticaAvanzada3/src/ui_mainUI.h \
+ /home/alumno/RoboticaAvanzada/src/ui_mainUI.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QVariant \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QApplication \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qapplication.h \
@@ -1090,12 +1090,12 @@ src/CMakeFiles/giraff_viewer.dir/commonbehaviorI.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QVBoxLayout \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h \
- /home/alumno/RoboticaAvanzada3/src/CameraRGBDSimple.h \
- /home/alumno/RoboticaAvanzada3/src/CameraSimple.h \
- /home/alumno/RoboticaAvanzada3/src/DifferentialRobot.h \
- /home/alumno/RoboticaAvanzada3/src/GenericBase.h \
- /home/alumno/RoboticaAvanzada3/src/FullPoseEstimation.h \
- /home/alumno/RoboticaAvanzada3/src/HumanCameraBody.h \
- /home/alumno/RoboticaAvanzada3/src/JointMotorSimple.h \
- /home/alumno/RoboticaAvanzada3/src/Laser.h \
- /home/alumno/RoboticaAvanzada3/src/genericmonitor.h
+ /home/alumno/RoboticaAvanzada/src/CameraRGBDSimple.h \
+ /home/alumno/RoboticaAvanzada/src/CameraSimple.h \
+ /home/alumno/RoboticaAvanzada/src/DifferentialRobot.h \
+ /home/alumno/RoboticaAvanzada/src/GenericBase.h \
+ /home/alumno/RoboticaAvanzada/src/FullPoseEstimation.h \
+ /home/alumno/RoboticaAvanzada/src/HumanCameraBody.h \
+ /home/alumno/RoboticaAvanzada/src/JointMotorSimple.h \
+ /home/alumno/RoboticaAvanzada/src/Laser.h \
+ /home/alumno/RoboticaAvanzada/src/genericmonitor.h

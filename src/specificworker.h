@@ -83,10 +83,15 @@ private:
     void setRobotSpeed(float speed, float rot);
     void posicionRobot (RoboCompFullPoseEstimation::FullPoseEuler bState);
     void drawPeopleMap (const RoboCompHumanCameraBody::PeopleData &people, RoboCompFullPoseEstimation::FullPoseEuler bState);
+    QPointF robot_to_world(RoboCompFullPoseEstimation::FullPoseEuler state, Eigen::Vector2f TW);
+    QPointF world_to_robot(RoboCompFullPoseEstimation::FullPoseEuler state);
+    QPointF world_to_robot2(Eigen::Vector2f point, RoboCompFullPoseEstimation::FullPoseEuler bState);
+    QPointF robot_to_world2(Eigen::Vector2f TW, RoboCompFullPoseEstimation::FullPoseEuler bState);
+
 
     ////////////////////////////////////////////////////////////////////////////////////////
     void draw_laser(const RoboCompLaser::TLaserData &ldata);
-    void world_to_robot(Eigen::Vector2f robot_eigen, Eigen::Vector2f target_eigen, RoboCompFullPoseEstimation::FullPoseEuler bState);
+    void world_to_robot5(Eigen::Vector2f robot_eigen, Eigen::Vector2f target_eigen, RoboCompFullPoseEstimation::FullPoseEuler bState);
     float speed_multiplier(float rot, float dist);
 
     // grid
@@ -102,7 +107,8 @@ private:
 
     //matriz de rotacion
     //https://eigen.tuxfamily.org/dox/classEigen_1_1AngleAxis.html
-    Eigen::AngleAxis<float> x_axis_rotation_matrix = Eigen::AngleAxisf (0.414, Eigen::Vector3f::UnitX());
+
+    Eigen::AngleAxis<float> x_axis_rotation_matrix = Eigen::AngleAxisf (1.3, Eigen::Vector3f::UnitX());
 //    Eigen::AngleAxis<float> z_axis_rotation_matrix = Eigen::AngleAxisf (servo_position, Eigen::Vector3f::UnitZ());
 
 };

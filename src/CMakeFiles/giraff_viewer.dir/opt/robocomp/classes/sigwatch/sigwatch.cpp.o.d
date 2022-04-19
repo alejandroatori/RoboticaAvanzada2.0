@@ -291,5 +291,5 @@ src/CMakeFiles/giraff_viewer.dir/opt/robocomp/classes/sigwatch/sigwatch.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h \
  /usr/include/x86_64-linux-gnu/bits/sigthread.h \
  /usr/include/x86_64-linux-gnu/bits/signal_ext.h \
- /home/alumno/RoboticaAvanzada3/src/giraff_viewer_autogen/include/moc_sigwatch.cpp \
- /home/alumno/RoboticaAvanzada3/src/giraff_viewer_autogen/include/../../../../../../opt/robocomp/classes/sigwatch/sigwatch.h
+ /home/alumno/RoboticaAvanzada/src/giraff_viewer_autogen/include/moc_sigwatch.cpp \
+ /home/alumno/RoboticaAvanzada/src/giraff_viewer_autogen/include/../../../../../../opt/robocomp/classes/sigwatch/sigwatch.h

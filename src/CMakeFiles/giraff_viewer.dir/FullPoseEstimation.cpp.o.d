@@ -1,7 +1,7 @@
 src/CMakeFiles/giraff_viewer.dir/FullPoseEstimation.cpp.o: \
- /home/alumno/RoboticaAvanzada3/src/FullPoseEstimation.cpp \
+ /home/alumno/RoboticaAvanzada/src/FullPoseEstimation.cpp \
  /usr/include/stdc-predef.h \
- /home/alumno/RoboticaAvanzada3/src/FullPoseEstimation.h \
+ /home/alumno/RoboticaAvanzada/src/FullPoseEstimation.h \
  /usr/include/IceUtil/PushDisableWarnings.h /usr/include/Ice/ProxyF.h \
  /usr/include/Ice/Config.h /usr/include/IceUtil/Config.h \
  /usr/include/c++/10/stdlib.h /usr/include/c++/10/cstdlib \

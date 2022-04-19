@@ -1,7 +1,7 @@
 src/CMakeFiles/giraff_viewer.dir/CameraRGBDSimple.cpp.o: \
- /home/alumno/RoboticaAvanzada3/src/CameraRGBDSimple.cpp \
+ /home/alumno/RoboticaAvanzada/src/CameraRGBDSimple.cpp \
  /usr/include/stdc-predef.h \
- /home/alumno/RoboticaAvanzada3/src/CameraRGBDSimple.h \
+ /home/alumno/RoboticaAvanzada/src/CameraRGBDSimple.h \
  /usr/include/IceUtil/PushDisableWarnings.h /usr/include/Ice/ProxyF.h \
  /usr/include/Ice/Config.h /usr/include/IceUtil/Config.h \
  /usr/include/c++/10/stdlib.h /usr/include/c++/10/cstdlib \

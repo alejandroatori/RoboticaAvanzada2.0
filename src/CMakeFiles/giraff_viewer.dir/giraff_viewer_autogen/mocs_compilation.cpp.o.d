@@ -1,8 +1,8 @@
 src/CMakeFiles/giraff_viewer.dir/giraff_viewer_autogen/mocs_compilation.cpp.o: \
- /home/alumno/RoboticaAvanzada3/src/giraff_viewer_autogen/mocs_compilation.cpp \
+ /home/alumno/RoboticaAvanzada/src/giraff_viewer_autogen/mocs_compilation.cpp \
  /usr/include/stdc-predef.h \
- /home/alumno/RoboticaAvanzada3/src/giraff_viewer_autogen/EWIEGA46WW/moc_genericmonitor.cpp \
- /home/alumno/RoboticaAvanzada3/src/giraff_viewer_autogen/EWIEGA46WW/../../genericmonitor.h \
+ /home/alumno/RoboticaAvanzada/src/giraff_viewer_autogen/EWIEGA46WW/moc_genericmonitor.cpp \
+ /home/alumno/RoboticaAvanzada/src/giraff_viewer_autogen/EWIEGA46WW/../../genericmonitor.h \
  /usr/include/Ice/Ice.h /usr/include/IceUtil/PushDisableWarnings.h \
  /usr/include/Ice/Config.h /usr/include/IceUtil/Config.h \
  /usr/include/c++/10/stdlib.h /usr/include/c++/10/cstdlib \
@@ -666,11 +666,11 @@ src/CMakeFiles/giraff_viewer.dir/giraff_viewer_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qwineventnotifier.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qxmlstream.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qtcoreversion.h \
- /home/alumno/RoboticaAvanzada3/src/giraff_viewer_autogen/EWIEGA46WW/../../genericworker.h \
- /home/alumno/RoboticaAvanzada3/src/giraff_viewer_autogen/EWIEGA46WW/../../config.h \
+ /home/alumno/RoboticaAvanzada/src/giraff_viewer_autogen/EWIEGA46WW/../../genericworker.h \
+ /home/alumno/RoboticaAvanzada/src/giraff_viewer_autogen/EWIEGA46WW/../../config.h \
  /opt/robocomp/classes/qlog/qlog.h \
- /home/alumno/RoboticaAvanzada3/src/config.h \
- /usr/include/boost/format.hpp /usr/include/boost/detail/workaround.hpp \
+ /home/alumno/RoboticaAvanzada/src/config.h /usr/include/boost/format.hpp \
+ /usr/include/boost/detail/workaround.hpp \
  /usr/include/boost/config/workaround.hpp /usr/include/boost/config.hpp \
  /usr/include/boost/config/user.hpp \
  /usr/include/boost/config/detail/select_compiler_config.hpp \
@@ -1061,7 +1061,7 @@ src/CMakeFiles/giraff_viewer.dir/giraff_viewer_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qvector4d.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtguiversion.h \
- /home/alumno/RoboticaAvanzada3/src/ui_mainUI.h \
+ /home/alumno/RoboticaAvanzada/src/ui_mainUI.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QVariant \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QApplication \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qapplication.h \
@@ -1090,23 +1090,23 @@ src/CMakeFiles/giraff_viewer.dir/giraff_viewer_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QVBoxLayout \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h \
- /home/alumno/RoboticaAvanzada3/src/CommonBehavior.h \
- /home/alumno/RoboticaAvanzada3/src/CameraRGBDSimple.h \
- /home/alumno/RoboticaAvanzada3/src/CameraSimple.h \
- /home/alumno/RoboticaAvanzada3/src/DifferentialRobot.h \
- /home/alumno/RoboticaAvanzada3/src/GenericBase.h \
- /home/alumno/RoboticaAvanzada3/src/FullPoseEstimation.h \
- /home/alumno/RoboticaAvanzada3/src/HumanCameraBody.h \
- /home/alumno/RoboticaAvanzada3/src/JointMotorSimple.h \
- /home/alumno/RoboticaAvanzada3/src/Laser.h \
- /home/alumno/RoboticaAvanzada3/src/giraff_viewer_autogen/EWIEGA46WW/moc_genericworker.cpp \
- /home/alumno/RoboticaAvanzada3/src/giraff_viewer_autogen/EWIEGA46WW/../../genericworker.h \
- /home/alumno/RoboticaAvanzada3/src/giraff_viewer_autogen/EWIEGA46WW/moc_specificmonitor.cpp \
- /home/alumno/RoboticaAvanzada3/src/giraff_viewer_autogen/EWIEGA46WW/../../specificmonitor.h \
- /home/alumno/RoboticaAvanzada3/src/giraff_viewer_autogen/EWIEGA46WW/../../genericmonitor.h \
- /home/alumno/RoboticaAvanzada3/src/giraff_viewer_autogen/EWIEGA46WW/moc_specificworker.cpp \
- /home/alumno/RoboticaAvanzada3/src/giraff_viewer_autogen/EWIEGA46WW/../../specificworker.h \
- /home/alumno/RoboticaAvanzada3/src/genericworker.h \
+ /home/alumno/RoboticaAvanzada/src/CommonBehavior.h \
+ /home/alumno/RoboticaAvanzada/src/CameraRGBDSimple.h \
+ /home/alumno/RoboticaAvanzada/src/CameraSimple.h \
+ /home/alumno/RoboticaAvanzada/src/DifferentialRobot.h \
+ /home/alumno/RoboticaAvanzada/src/GenericBase.h \
+ /home/alumno/RoboticaAvanzada/src/FullPoseEstimation.h \
+ /home/alumno/RoboticaAvanzada/src/HumanCameraBody.h \
+ /home/alumno/RoboticaAvanzada/src/JointMotorSimple.h \
+ /home/alumno/RoboticaAvanzada/src/Laser.h \
+ /home/alumno/RoboticaAvanzada/src/giraff_viewer_autogen/EWIEGA46WW/moc_genericworker.cpp \
+ /home/alumno/RoboticaAvanzada/src/giraff_viewer_autogen/EWIEGA46WW/../../genericworker.h \
+ /home/alumno/RoboticaAvanzada/src/giraff_viewer_autogen/EWIEGA46WW/moc_specificmonitor.cpp \
+ /home/alumno/RoboticaAvanzada/src/giraff_viewer_autogen/EWIEGA46WW/../../specificmonitor.h \
+ /home/alumno/RoboticaAvanzada/src/giraff_viewer_autogen/EWIEGA46WW/../../genericmonitor.h \
+ /home/alumno/RoboticaAvanzada/src/giraff_viewer_autogen/EWIEGA46WW/moc_specificworker.cpp \
+ /home/alumno/RoboticaAvanzada/src/giraff_viewer_autogen/EWIEGA46WW/../../specificworker.h \
+ /home/alumno/RoboticaAvanzada/src/genericworker.h \
  /home/robocomp/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGraphicsScene \
@@ -1349,7 +1349,7 @@ src/CMakeFiles/giraff_viewer.dir/giraff_viewer_autogen/mocs_compilation.cpp.o: \
  /usr/include/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QVector2D \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QColor \
- /home/alumno/RoboticaAvanzada3/src/giraff_viewer_autogen/EWIEGA46WW/../../HumanCameraBody.h \
+ /home/alumno/RoboticaAvanzada/src/giraff_viewer_autogen/EWIEGA46WW/../../HumanCameraBody.h \
  /usr/include/jsoncpp/json/json.h /usr/include/jsoncpp/json/autolink.h \
  /usr/include/jsoncpp/json/config.h /usr/include/jsoncpp/json/version.h \
  /usr/include/jsoncpp/json/value.h /usr/include/jsoncpp/json/forwards.h \
@@ -1437,5 +1437,5 @@ src/CMakeFiles/giraff_viewer.dir/giraff_viewer_autogen/mocs_compilation.cpp.o: \
  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/IncompleteLUT.h \
  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/IncompleteCholesky.h \
  /usr/include/eigen3/Eigen/Geometry \
- /home/alumno/RoboticaAvanzada3/src/giraff_viewer_autogen/WU3NUE3SBC/moc_abstract_graphic_viewer.cpp \
- /home/alumno/RoboticaAvanzada3/src/giraff_viewer_autogen/WU3NUE3SBC/../../../../../../opt/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h
+ /home/alumno/RoboticaAvanzada/src/giraff_viewer_autogen/WU3NUE3SBC/moc_abstract_graphic_viewer.cpp \
+ /home/alumno/RoboticaAvanzada/src/giraff_viewer_autogen/WU3NUE3SBC/../../../../../../opt/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h

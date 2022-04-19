@@ -1,7 +1,7 @@
 src/CMakeFiles/giraff_viewer.dir/opt/robocomp/classes/qlog/qlog.cpp.o: \
  /opt/robocomp/classes/qlog/qlog.cpp /usr/include/stdc-predef.h \
  /opt/robocomp/classes/qlog/qlog.h \
- /home/alumno/RoboticaAvanzada3/src/config.h \
+ /home/alumno/RoboticaAvanzada/src/config.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QtCore \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QtCoreDepends \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobal.h \

@@ -78,7 +78,7 @@ void SpecificWorker::initialize(int period)
 
 
     //Archivo json esqueleto
-    ifstream human_body_parts_file("/home/alumno/RoboticaAvanzada/giraff_viewer/src/human_pose.json");
+    ifstream human_body_parts_file("/home/alumno/RoboticaAvanzada/src/human_pose.json");
     Json::Reader reader;
     Json::Value objeto_json;
 
@@ -90,6 +90,7 @@ void SpecificWorker::initialize(int period)
     for (int i = 0; i < id_articulaciones.size(); i++) {
         vector_articulaciones[i].first = id_articulaciones[i][0].asInt();
         vector_articulaciones[i].second = id_articulaciones[i][1].asInt();
+//        std::cout << "JSON" << std::endl;
     }
 
 }
@@ -105,10 +106,11 @@ void SpecificWorker::cameraSetUp (const RoboCompHumanCameraBody::PeopleData &peo
 
         if(not top_img.image.empty())
         {
+            //qInfo() << __FUNCTION__ << "hay imagen";
 
             if (!top_img.compressed)
             {
-                qInfo() << __FUNCTION__  << "hola3";
+                //qInfo() << __FUNCTION__  << "hola3";
                 top_img_uncomp = cv::imdecode(top_img.image, -1);
                 cv::cvtColor(top_img_uncomp, top_img_uncomp, cv::COLOR_BGR2RGB);
                 drawSkeleton(top_img_uncomp, people_data);
@@ -166,8 +168,6 @@ void SpecificWorker::compute()
     cameraSetUp(people);
     posicionRobot(bState);
     drawPeopleMap(people, bState);
-
-
 }
 
 void SpecificWorker::drawPeopleMap (const RoboCompHumanCameraBody::PeopleData &people, RoboCompFullPoseEstimation::FullPoseEuler bState){
@@ -181,30 +181,25 @@ void SpecificWorker::drawPeopleMap (const RoboCompHumanCameraBody::PeopleData &p
 //        for (const auto &person : people.peoplelist){
             if (person.joints.contains(std::to_string(17))){
                 auto cd = person.joints.at("17");
-                auto x = cd.x * 500;
-                float y;
-                //qInfo() << __FUNCTION__ << "y = " << cd.y << endl;
 
-                if (cd.y >= 0){
-                    y = cd.y * 2000;
-                }
-                else{
-                    y = 0;
-                    //qInfo() << __FUNCTION__ << "ta cerca" << endl;
-                }
+                std::cout << "x ->" << cd.x << " y -> " << cd.y << " z -> " << cd.z << std::endl;
+                auto points = x_axis_rotation_matrix * Eigen::Vector3f (cd.x, cd.y, cd.z);
 
+                points.x() = points.x() * 1000;
+                points.y() = points.y() * 1000;
 
-                x += bState.x;
-                y += bState.y;
+                Eigen::Vector2f points2f (points.x(), points.y());
 
-//                std::cout << "x -> " << x_axis_rotation_matrix.axis().x() << "   y -> "  << std::endl;
+                QPointF f = world_to_robot2(points2f, bState);
 
-                auto target_r = laser_in_robot_polygon->mapToScene(QPointF(x,y));
+                std::cout << f.x() << " - " << f.y() << std::endl;
+
+                auto target_r = laser_in_robot_polygon->mapToScene(f);
                 target_elipse = viewer->scene.addEllipse(target_r.x(), -target_r.y(), 200, 200, QPen(color, 30), QBrush(color));
                 target_elipse->setZValue(3);
 
                 this->target.active = true;
-                this->target.dest = QPointF (x, y);
+                this->target.dest = f;
             }
             else{
                 this->target.active = false;
@@ -224,11 +219,77 @@ void SpecificWorker::posicionRobot (RoboCompFullPoseEstimation::FullPoseEuler bS
         pos_y->display(bState.z);
 }
 
+QPointF SpecificWorker::world_to_robot(RoboCompFullPoseEstimation::FullPoseEuler state)
+{
+    float alfa = state.rz;
+    Eigen::Vector2f TW(target.dest.x(),target.dest.y()); //target
+    Eigen::Vector2f RW(state.x,state.z); //robot
+
+    Eigen::Matrix2f R(2,2);
+    R(0,0) = cos(alfa);
+    R(0,1) = sin(alfa);
+    R(1,0) = -sin(alfa);
+    R(1,1) = cos(alfa);
+
+    auto TR = R * (TW-RW);
+
+    return QPointF(TR.x(),TR.y());
+}
+
+QPointF SpecificWorker::robot_to_world(RoboCompFullPoseEstimation::FullPoseEuler state, Eigen::Vector2f TW)
+{
+    float alfa = state.rz;
+    Eigen::Vector2f RW(state.x,state.z); //robot
+
+    Eigen::Matrix2f R(2,2);
+    R(0,0) = cos(alfa);
+    R(0,1) = -sin(alfa);
+    R(1,0) = sin(alfa);
+    R(1,1) = cos(alfa);
+
+    auto TR = R * TW + RW;
+
+    return QPointF(TR.x(),TR.y());
+}
+
+QPointF SpecificWorker::world_to_robot2(Eigen::Vector2f point, RoboCompFullPoseEstimation::FullPoseEuler bState)
+{
+    float alfa = bState.rz;
+    Eigen::Vector2f RW(bState.x, bState.y); //robot
+
+    Eigen::Matrix2f R(2,2);
+    R(0,0) = cos(alfa);
+    R(0,1) = sin(alfa);
+    R(1,0) = -sin(alfa);
+    R(1,1) = cos(alfa);
+
+    auto TR = R * (point-RW);
+
+    return QPointF (TR.x(), TR.y());
+}
+QPointF SpecificWorker::robot_to_world2(Eigen::Vector2f TW, RoboCompFullPoseEstimation::FullPoseEuler bState)
+{
+    float alfa = bState.rz;
+    Eigen::Vector2f RW(bState.x, bState.y); //robot
+
+    Eigen::Matrix2f R(2,2);
+    R(0,0) = cos(alfa);
+    R(0,1) = sin(alfa);
+    R(1,0) = -sin(alfa);
+    R(1,1) = cos(alfa);
+
+    auto TR = R * (TW - RW);
+
+    return QPointF(TR.x(),TR.y());
+}
+
 void SpecificWorker::drawSkeleton (cv::Mat &image, const RoboCompHumanCameraBody::PeopleData &people_data){
     for( const auto &person : people_data.peoplelist)
     {
+        //qInfo() << __FUNCTION__ << " hay personas";
         for(const auto &[name1, name2] :  vector_articulaciones)
         {
+            //qInfo() << __FUNCTION__ << " hay articulaciones";
             if(person.joints.contains(std::to_string(name1)) and person.joints.contains(std::to_string(name2)))
             {
                 //cout << "draw skeletons" <<endl;
@@ -248,7 +309,7 @@ void SpecificWorker::drawSkeleton (cv::Mat &image, const RoboCompHumanCameraBody
 
 
 /////////////////////////////////////////////////////////////////////////
-void SpecificWorker::world_to_robot(Eigen::Vector2f robot_eigen, Eigen::Vector2f target_eigen, RoboCompFullPoseEstimation::FullPoseEuler bState)
+void SpecificWorker::world_to_robot5(Eigen::Vector2f robot_eigen, Eigen::Vector2f target_eigen, RoboCompFullPoseEstimation::FullPoseEuler bState)
 {
     Eigen::Matrix2f rot;
     rot << cos(bState.rz), -sin(bState.rz), sin(bState.rz), cos(bState.rz);

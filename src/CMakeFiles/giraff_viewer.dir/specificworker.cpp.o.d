@@ -1,9 +1,9 @@
 src/CMakeFiles/giraff_viewer.dir/specificworker.cpp.o: \
- /home/alumno/RoboticaAvanzada3/src/specificworker.cpp \
+ /home/alumno/RoboticaAvanzada/src/specificworker.cpp \
  /usr/include/stdc-predef.h \
- /home/alumno/RoboticaAvanzada3/src/specificworker.h \
- /home/alumno/RoboticaAvanzada3/src/genericworker.h \
- /home/alumno/RoboticaAvanzada3/src/config.h \
+ /home/alumno/RoboticaAvanzada/src/specificworker.h \
+ /home/alumno/RoboticaAvanzada/src/genericworker.h \
+ /home/alumno/RoboticaAvanzada/src/config.h \
  /usr/lib/gcc/x86_64-linux-gnu/10/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
@@ -19,7 +19,7 @@ src/CMakeFiles/giraff_viewer.dir/specificworker.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /opt/robocomp/classes/qlog/qlog.h \
- /home/alumno/RoboticaAvanzada3/src/config.h \
+ /home/alumno/RoboticaAvanzada/src/config.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QtCore \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QtCoreDepends \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobal.h \
@@ -989,7 +989,7 @@ src/CMakeFiles/giraff_viewer.dir/specificworker.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qvector4d.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtguiversion.h \
- /home/alumno/RoboticaAvanzada3/src/ui_mainUI.h \
+ /home/alumno/RoboticaAvanzada/src/ui_mainUI.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QVariant \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QApplication \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qapplication.h \
@@ -1018,7 +1018,7 @@ src/CMakeFiles/giraff_viewer.dir/specificworker.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QVBoxLayout \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h \
- /home/alumno/RoboticaAvanzada3/src/CommonBehavior.h \
+ /home/alumno/RoboticaAvanzada/src/CommonBehavior.h \
  /usr/include/IceUtil/PushDisableWarnings.h /usr/include/Ice/ProxyF.h \
  /usr/include/Ice/Config.h /usr/include/IceUtil/Config.h \
  /usr/include/c++/10/cassert /usr/include/c++/10/sstream \
@@ -1063,14 +1063,14 @@ src/CMakeFiles/giraff_viewer.dir/specificworker.cpp.o: \
  /usr/include/c++/10/deque /usr/include/c++/10/bits/stl_deque.h \
  /usr/include/c++/10/bits/deque.tcc /usr/include/Ice/FactoryTableInit.h \
  /usr/include/Ice/DefaultValueFactory.h \
- /home/alumno/RoboticaAvanzada3/src/CameraRGBDSimple.h \
- /home/alumno/RoboticaAvanzada3/src/CameraSimple.h \
- /home/alumno/RoboticaAvanzada3/src/DifferentialRobot.h \
- /home/alumno/RoboticaAvanzada3/src/GenericBase.h \
- /home/alumno/RoboticaAvanzada3/src/FullPoseEstimation.h \
- /home/alumno/RoboticaAvanzada3/src/HumanCameraBody.h \
- /home/alumno/RoboticaAvanzada3/src/JointMotorSimple.h \
- /home/alumno/RoboticaAvanzada3/src/Laser.h \
+ /home/alumno/RoboticaAvanzada/src/CameraRGBDSimple.h \
+ /home/alumno/RoboticaAvanzada/src/CameraSimple.h \
+ /home/alumno/RoboticaAvanzada/src/DifferentialRobot.h \
+ /home/alumno/RoboticaAvanzada/src/GenericBase.h \
+ /home/alumno/RoboticaAvanzada/src/FullPoseEstimation.h \
+ /home/alumno/RoboticaAvanzada/src/HumanCameraBody.h \
+ /home/alumno/RoboticaAvanzada/src/JointMotorSimple.h \
+ /home/alumno/RoboticaAvanzada/src/Laser.h \
  /home/robocomp/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGraphicsScene \
@@ -1313,7 +1313,7 @@ src/CMakeFiles/giraff_viewer.dir/specificworker.cpp.o: \
  /usr/include/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QVector2D \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QColor \
- /home/alumno/RoboticaAvanzada3/src/HumanCameraBody.h \
+ /home/alumno/RoboticaAvanzada/src/HumanCameraBody.h \
  /usr/include/jsoncpp/json/json.h /usr/include/jsoncpp/json/autolink.h \
  /usr/include/jsoncpp/json/config.h /usr/include/jsoncpp/json/version.h \
  /usr/include/jsoncpp/json/value.h /usr/include/jsoncpp/json/forwards.h \

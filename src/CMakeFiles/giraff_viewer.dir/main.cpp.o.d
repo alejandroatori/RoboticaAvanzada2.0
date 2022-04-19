@@ -1,5 +1,5 @@
 src/CMakeFiles/giraff_viewer.dir/main.cpp.o: \
- /home/alumno/RoboticaAvanzada3/src/main.cpp /usr/include/stdc-predef.h \
+ /home/alumno/RoboticaAvanzada/src/main.cpp /usr/include/stdc-predef.h \
  /usr/include/signal.h /usr/include/features.h \
  /usr/include/x86_64-linux-gnu/sys/cdefs.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -1062,8 +1062,8 @@ src/CMakeFiles/giraff_viewer.dir/main.cpp.o: \
  /opt/robocomp/classes/sigwatch/sigwatch.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QObject \
  /opt/robocomp/classes/qlog/qlog.h \
- /home/alumno/RoboticaAvanzada3/src/config.h \
- /usr/include/boost/format.hpp /usr/include/boost/detail/workaround.hpp \
+ /home/alumno/RoboticaAvanzada/src/config.h /usr/include/boost/format.hpp \
+ /usr/include/boost/detail/workaround.hpp \
  /usr/include/boost/config/workaround.hpp /usr/include/boost/config.hpp \
  /usr/include/boost/config/user.hpp \
  /usr/include/boost/config/detail/select_compiler_config.hpp \
@@ -1268,11 +1268,11 @@ src/CMakeFiles/giraff_viewer.dir/main.cpp.o: \
  /usr/include/boost/format/parsing.hpp \
  /usr/include/boost/format/free_funcs.hpp \
  /usr/include/boost/format/detail/unset_macros.hpp \
- /home/alumno/RoboticaAvanzada3/src/config.h \
- /home/alumno/RoboticaAvanzada3/src/genericmonitor.h \
- /home/alumno/RoboticaAvanzada3/src/genericworker.h \
+ /home/alumno/RoboticaAvanzada/src/config.h \
+ /home/alumno/RoboticaAvanzada/src/genericmonitor.h \
+ /home/alumno/RoboticaAvanzada/src/genericworker.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QtGui \
- /home/alumno/RoboticaAvanzada3/src/ui_mainUI.h \
+ /home/alumno/RoboticaAvanzada/src/ui_mainUI.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QApplication \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QFrame \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QHBoxLayout \
@@ -1281,17 +1281,17 @@ src/CMakeFiles/giraff_viewer.dir/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QSpacerItem \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QSplitter \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QVBoxLayout \
- /home/alumno/RoboticaAvanzada3/src/CommonBehavior.h \
- /home/alumno/RoboticaAvanzada3/src/CameraRGBDSimple.h \
- /home/alumno/RoboticaAvanzada3/src/CameraSimple.h \
- /home/alumno/RoboticaAvanzada3/src/DifferentialRobot.h \
- /home/alumno/RoboticaAvanzada3/src/GenericBase.h \
- /home/alumno/RoboticaAvanzada3/src/FullPoseEstimation.h \
- /home/alumno/RoboticaAvanzada3/src/HumanCameraBody.h \
- /home/alumno/RoboticaAvanzada3/src/JointMotorSimple.h \
- /home/alumno/RoboticaAvanzada3/src/Laser.h \
- /home/alumno/RoboticaAvanzada3/src/specificworker.h \
- /home/alumno/RoboticaAvanzada3/src/genericworker.h \
+ /home/alumno/RoboticaAvanzada/src/CommonBehavior.h \
+ /home/alumno/RoboticaAvanzada/src/CameraRGBDSimple.h \
+ /home/alumno/RoboticaAvanzada/src/CameraSimple.h \
+ /home/alumno/RoboticaAvanzada/src/DifferentialRobot.h \
+ /home/alumno/RoboticaAvanzada/src/GenericBase.h \
+ /home/alumno/RoboticaAvanzada/src/FullPoseEstimation.h \
+ /home/alumno/RoboticaAvanzada/src/HumanCameraBody.h \
+ /home/alumno/RoboticaAvanzada/src/JointMotorSimple.h \
+ /home/alumno/RoboticaAvanzada/src/Laser.h \
+ /home/alumno/RoboticaAvanzada/src/specificworker.h \
+ /home/alumno/RoboticaAvanzada/src/genericworker.h \
  /home/robocomp/robocomp/classes/abstract_graphic_viewer/abstract_graphic_viewer.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QGraphicsScene \
@@ -1526,7 +1526,7 @@ src/CMakeFiles/giraff_viewer.dir/main.cpp.o: \
  /usr/include/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QVector2D \
  /usr/include/x86_64-linux-gnu/qt5/QtGui/QColor \
- /home/alumno/RoboticaAvanzada3/src/HumanCameraBody.h \
+ /home/alumno/RoboticaAvanzada/src/HumanCameraBody.h \
  /usr/include/jsoncpp/json/json.h /usr/include/jsoncpp/json/autolink.h \
  /usr/include/jsoncpp/json/config.h /usr/include/jsoncpp/json/version.h \
  /usr/include/jsoncpp/json/value.h /usr/include/jsoncpp/json/forwards.h \
@@ -1614,5 +1614,5 @@ src/CMakeFiles/giraff_viewer.dir/main.cpp.o: \
  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/IncompleteLUT.h \
  /usr/include/eigen3/Eigen/src/IterativeLinearSolvers/IncompleteCholesky.h \
  /usr/include/eigen3/Eigen/Geometry \
- /home/alumno/RoboticaAvanzada3/src/specificmonitor.h \
- /home/alumno/RoboticaAvanzada3/src/commonbehaviorI.h
+ /home/alumno/RoboticaAvanzada/src/specificmonitor.h \
+ /home/alumno/RoboticaAvanzada/src/commonbehaviorI.h
