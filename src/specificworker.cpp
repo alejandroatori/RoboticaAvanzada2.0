@@ -56,6 +56,8 @@ void SpecificWorker::initialize(int period)
     auto [rp, lp] = viewer->add_robot(ROBOT_LENGTH, ROBOT_LENGTH);
     laser_in_robot_polygon = lp;
     robot_polygon = rp;
+    giro = -1;
+
     try
     {
         RoboCompGenericBase::TBaseState bState;
@@ -92,6 +94,9 @@ void SpecificWorker::initialize(int period)
         vector_articulaciones[i].second = id_articulaciones[i][1].asInt();
 //        std::cout << "JSON" << std::endl;
     }
+
+    x_axis_rotation_matrix = Eigen::AngleAxisf (1.3, Eigen::Vector3f::UnitX())
+                             * Eigen::AngleAxisf (0.2, Eigen::Vector3f::UnitY());
 
 }
 
@@ -160,7 +165,8 @@ void SpecificWorker::compute()
 {
     auto people = humancamerabody_proxy->newPeopleData();
     RoboCompFullPoseEstimation::FullPoseEuler bState;
-    try {
+    try
+    {
         bState = fullposeestimation_proxy->getFullPoseEuler();
     }
     catch(const Ice::Exception &e){ std::cout << e.what() << " POSE ERROR" << std::endl;}
@@ -168,43 +174,38 @@ void SpecificWorker::compute()
     cameraSetUp(people);
     posicionRobot(bState);
     drawPeopleMap(people, bState);
+
+    moveRobot();
 }
 
 void SpecificWorker::drawPeopleMap (const RoboCompHumanCameraBody::PeopleData &people, RoboCompFullPoseEstimation::FullPoseEuler bState){
     QColor color("Magenta");
     static QGraphicsItem *target_elipse = nullptr;
-    if(target_elipse != nullptr)
+    if(target_elipse != nullptr) {
         viewer->scene.removeItem(target_elipse);
+    }
 
-    if (!people.peoplelist.empty()){
+    if (!people.peoplelist.empty())
+    {
         const auto &person = people.peoplelist[0];
-//        for (const auto &person : people.peoplelist){
             if (person.joints.contains(std::to_string(17))){
                 auto cd = person.joints.at("17");
 
-                std::cout << "x ->" << cd.x << " y -> " << cd.y << " z -> " << cd.z << std::endl;
-                auto points = x_axis_rotation_matrix * Eigen::Vector3f (cd.x, cd.y, cd.z);
-
-                points.x() = points.x() * 1000;
-                points.y() = points.y() * 1000;
-
-                Eigen::Vector2f points2f (points.x(), points.y());
-
-                QPointF f = world_to_robot2(points2f, bState);
-
-                std::cout << f.x() << " - " << f.y() << std::endl;
+//                std::cout << "x ->" << cd.x << " y -> " << cd.y << " z -> " << cd.z << std::endl;
+                Eigen::Vector2f points = ((x_axis_rotation_matrix * Eigen::Vector3f (cd.x, cd.y, cd.z)) * 1000.f).head(2);
+                points.y() = -points.y();  // invert axis
+                QPointF f = world_to_robot2(points, bState);
 
                 auto target_r = laser_in_robot_polygon->mapToScene(f);
-                target_elipse = viewer->scene.addEllipse(target_r.x(), -target_r.y(), 200, 200, QPen(color, 30), QBrush(color));
+                target_elipse = viewer->scene.addEllipse(-f.x(), f.y(), 200, 200, QPen(color, 30), QBrush(color));
                 target_elipse->setZValue(3);
 
+                this->target.dest = QPointF (points.x(), points.y());
                 this->target.active = true;
-                this->target.dest = f;
             }
             else{
                 this->target.active = false;
             }
-//        }
     }
     else{
         this->target.active = false;
@@ -300,15 +301,60 @@ void SpecificWorker::drawSkeleton (cv::Mat &image, const RoboCompHumanCameraBody
             }
             if (person.joints.contains(std::to_string(17))){
                 auto cuello = person.joints.at(std::to_string(17));
-                cv::circle(image, cv::Point (cuello.i, cuello.j), 7, cv::Scalar (0, 0, 0), 2);      //cv::FILLED
+                cv::circle(image, cv::Point (cuello.i, cuello.j), 7, cv::Scalar (0, 0, 0), 2);      //cv::FILLE
             }
         }
 
     }
+    cv::line(image, cv::Point(image.cols / 2, 0), cv::Point(image.cols/2, image.rows), cv::Scalar (0, 0, 255), 4);
+}
+
+void SpecificWorker::moveRobot(){
+
+    if (target.active){
+        float mod = sqrt(pow(target.dest.x(), 2) + pow(target.dest.y(), 2));
+        float beta = atan2(target.dest.x(), target.dest.y());
+        float reduce_speed_if_turning = exp(-pow(beta,2)/0.1);
+        //float adv = MAX_ADV_VEL * reduce_speed_if_turning * reduce_speed_if_close_to_target(mod);
+        float adv = 10;
+
+        qInfo() << __FUNCTION__  << "X -> " << target.dest.x() << "         y -> " << target.dest.y() << "       angulo -> " << beta * 0.95 << "      mod -> "  << mod << endl;
+
+        beta = std::clamp(beta, -1.f, 1.f);
+//        beta = fabs(beta)< 0.05 ? 0.f : beta;
+        if (fabs(beta) < 0.05){
+            beta = 0;
+            if (mod < 1000){
+                qInfo() << __FUNCTION__ << "Estas a mas de 1 metro :)";
+                adv = 0;
+            }
+        }
+        setRobotSpeed(adv, beta * 0.8);
+    }
+    else{
+        setRobotSpeed(0, 0);
+    }
 }
 
 
+
+
 /////////////////////////////////////////////////////////////////////////
+
+float SpecificWorker::reduce_speed_if_close_to_target(float mod)
+{
+    if (mod <= 150)
+    {
+        return 0;
+    }
+    else if (mod > 1000)
+    {
+        return 1;
+    }
+
+    return 0.5;
+}
+
 void SpecificWorker::world_to_robot5(Eigen::Vector2f robot_eigen, Eigen::Vector2f target_eigen, RoboCompFullPoseEstimation::FullPoseEuler bState)
 {
     Eigen::Matrix2f rot;
