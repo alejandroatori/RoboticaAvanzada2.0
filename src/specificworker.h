@@ -84,6 +84,7 @@ private:
     void posicionRobot (RoboCompFullPoseEstimation::FullPoseEuler bState);
     void drawPeopleMap (const RoboCompHumanCameraBody::PeopleData &people, RoboCompFullPoseEstimation::FullPoseEuler bState);
     float reduce_speed_if_close_to_target(float mod);
+    float reduce_speed_if_turning(float beta);
     QPointF robot_to_world(RoboCompFullPoseEstimation::FullPoseEuler state, Eigen::Vector2f TW);
     QPointF world_to_robot(RoboCompFullPoseEstimation::FullPoseEuler state);
     QPointF world_to_robot2(Eigen::Vector2f point, RoboCompFullPoseEstimation::FullPoseEuler bState);
@@ -102,13 +103,15 @@ private:
     Grid grid;
 
     float giro;
-    float MAX_ADV_VEL = 50;
+    float MAX_ADV_VEL = 500;
 
     //target
     int state;
     Target target;
     float dist;
     float beta;
+    QPointF targetAnterior;
+    bool primerTarget;
 
     //matriz de rotacion
     //https://eigen.tuxfamily.org/dox/classEigen_1_1AngleAxis.html

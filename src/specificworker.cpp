@@ -98,6 +98,7 @@ void SpecificWorker::initialize(int period)
     x_axis_rotation_matrix = Eigen::AngleAxisf (1.3, Eigen::Vector3f::UnitX())
                              * Eigen::AngleAxisf (0.2, Eigen::Vector3f::UnitY());
 
+    primerTarget = false;
 }
 
 void SpecificWorker::cameraSetUp (const RoboCompHumanCameraBody::PeopleData &people_data)
@@ -200,8 +201,26 @@ void SpecificWorker::drawPeopleMap (const RoboCompHumanCameraBody::PeopleData &p
                 target_elipse = viewer->scene.addEllipse(-f.x(), f.y(), 200, 200, QPen(color, 30), QBrush(color));
                 target_elipse->setZValue(3);
 
-                this->target.dest = QPointF (points.x(), points.y());
-                this->target.active = true;
+                //Elegir target
+                if (!primerTarget)
+                {
+                    targetAnterior = QPointF(points.x(), points.y());
+                    primerTarget = true;
+                }
+
+                float dist = sqrt(pow((points.x() - targetAnterior.x()), 2) + pow((points.y() - targetAnterior.y()), 2));
+                if (dist <= 1000) {
+                    qInfo() << __FUNCTION__ << "TARGET ACTUALIZADO" << endl;
+                    this->target.dest = QPointF(points.x(), points.y());
+                    this->target.active = true;
+                    targetAnterior = QPointF(points.x(), points.y());
+                }
+                else
+                {
+                    qInfo() << __FUNCTION__ << "TARGET ANTERIOR" << endl;
+                    this->target.dest = QPointF(targetAnterior.x(), targetAnterior.y());
+                    this->target.active = true;
+                }
             }
             else{
                 this->target.active = false;
@@ -311,25 +330,28 @@ void SpecificWorker::drawSkeleton (cv::Mat &image, const RoboCompHumanCameraBody
 
 void SpecificWorker::moveRobot(){
 
-    if (target.active){
+    if (target.active) {
         float mod = sqrt(pow(target.dest.x(), 2) + pow(target.dest.y(), 2));
         float beta = atan2(target.dest.x(), target.dest.y());
-        float reduce_speed_if_turning = exp(-pow(beta,2)/0.1);
-        //float adv = MAX_ADV_VEL * reduce_speed_if_turning * reduce_speed_if_close_to_target(mod);
-        float adv = 10;
+        float reduce_speed_if_turningv = exp(-pow(beta, 2)/0.1);
+        float adv = MAX_ADV_VEL * reduce_speed_if_turningv * reduce_speed_if_close_to_target(mod);
 
-        qInfo() << __FUNCTION__  << "X -> " << target.dest.x() << "         y -> " << target.dest.y() << "       angulo -> " << beta * 0.95 << "      mod -> "  << mod << endl;
+        //qInfo() << __FUNCTION__  << "X -> " << target.dest.x() << "         y -> " << target.dest.y() << "       angulo -> " << beta * 1.1 << "      mod -> "  << mod << endl;
 
         beta = std::clamp(beta, -1.f, 1.f);
 //        beta = fabs(beta)< 0.05 ? 0.f : beta;
         if (fabs(beta) < 0.05){
             beta = 0;
-            if (mod < 1000){
-                qInfo() << __FUNCTION__ << "Estas a mas de 1 metro :)";
-                adv = 0;
-            }
         }
-        setRobotSpeed(adv, beta * 0.8);
+
+        if (mod < 3000) {
+            setRobotSpeed(adv+500, beta*0.9);
+            qInfo() << __FUNCTION__ << "ADV:" << adv+500 << "BETA:" << beta << endl;
+        }
+        else if (mod < 1000)
+        {
+            setRobotSpeed(0, beta*0.9);
+        }
     }
     else{
         setRobotSpeed(0, 0);
@@ -343,16 +365,31 @@ void SpecificWorker::moveRobot(){
 
 float SpecificWorker::reduce_speed_if_close_to_target(float mod)
 {
-    if (mod <= 150)
+    int threshold = 1000;
+
+    if (mod <= threshold)
     {
-        return 0;
+        if (mod < 1000) {
+            return 0;
+        }
+        else
+        {
+            return mod/threshold;
+        }
     }
-    else if (mod > 1000)
+    else
     {
         return 1;
     }
+}
 
-    return 0.5;
+float SpecificWorker::reduce_speed_if_turning(float beta){
+    if (fabs(beta) >= 0.05){
+        return 0;
+    }
+    else{
+        return 1;
+    }
 }
 
 void SpecificWorker::world_to_robot5(Eigen::Vector2f robot_eigen, Eigen::Vector2f target_eigen, RoboCompFullPoseEstimation::FullPoseEuler bState)
