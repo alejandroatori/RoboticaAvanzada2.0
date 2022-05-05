@@ -82,7 +82,9 @@ private:
     void drawSkeleton (cv::Mat &image, const RoboCompHumanCameraBody::PeopleData &people_data);
     void setRobotSpeed(float speed, float rot);
     void posicionRobot (RoboCompFullPoseEstimation::FullPoseEuler bState);
-    void drawPeopleMap (const RoboCompHumanCameraBody::PeopleData &people, RoboCompFullPoseEstimation::FullPoseEuler bState);
+    void seguirUltimaPosicion();
+    int eleccionPersona(const RoboCompHumanCameraBody::PeopleData &people);
+    void drawPeopleMap (const RoboCompHumanCameraBody::PeopleData &people, RoboCompFullPoseEstimation::FullPoseEuler bState, int personaElegida);
     float reduce_speed_if_close_to_target(float mod);
     float reduce_speed_if_turning(float beta);
     QPointF robot_to_world(RoboCompFullPoseEstimation::FullPoseEuler state, Eigen::Vector2f TW);
@@ -103,14 +105,15 @@ private:
     Grid grid;
 
     float giro;
-    float MAX_ADV_VEL = 500;
+    float MAX_ADV_VEL = 1000;
+    bool estaParao = false;
 
     //target
     int state;
     Target target;
     float dist;
     float beta;
-    QPointF targetAnterior;
+    Target targetAnterior;
     bool primerTarget;
 
     //matriz de rotacion

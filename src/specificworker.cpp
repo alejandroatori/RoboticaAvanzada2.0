@@ -174,69 +174,118 @@ void SpecificWorker::compute()
 
     cameraSetUp(people);
     posicionRobot(bState);
-    drawPeopleMap(people, bState);
-
-    moveRobot();
+    int personaElegida = eleccionPersona(people);
+    if (personaElegida != -1){
+        std::cout << "Problema 1" << std::endl;
+        drawPeopleMap(people, bState, personaElegida);
+        std::cout << "Problema 2" << std::endl;
+        moveRobot();
+        std::cout << "Problema 3" << std::endl;
+    }
+    else{
+        std::cout << "Problema 4" << std::endl;
+        seguirUltimaPosicion();
+        std::cout << "Problema 5" << std::endl;
+    }
 }
 
-void SpecificWorker::drawPeopleMap (const RoboCompHumanCameraBody::PeopleData &people, RoboCompFullPoseEstimation::FullPoseEuler bState){
-    QColor color("Magenta");
-    static QGraphicsItem *target_elipse = nullptr;
-    if(target_elipse != nullptr) {
-        viewer->scene.removeItem(target_elipse);
+void SpecificWorker::seguirUltimaPosicion(){
+    if(target.active){
+        float mod = sqrt(pow(target.dest.x(), 2) + pow(target.dest.y(), 2));
+        float beta = atan2(target.dest.x(), target.dest.y());
+        float reduce_speed_if_turningv = exp(-pow(beta, 2)/0.1);
+        float adv = MAX_ADV_VEL * reduce_speed_if_turningv * reduce_speed_if_close_to_target(mod);
+
+        //qInfo() << __FUNCTION__  << "X -> " << target.dest.x() << "         y -> " << target.dest.y() << "       angulo -> " << beta * 1.1 << "      mod -> "  << mod << endl;
+
+        beta = std::clamp(beta, -1.f, 1.f);
+//        beta = fabs(beta)< 0.05 ? 0.f : beta;
+        if (fabs(beta) < 0.05){
+            beta = 0;
+        }
+
+        if (mod < 3000) {
+            setRobotSpeed(adv, beta*1.2);
+            //qInfo() << __FUNCTION__ << "ADV:" << adv*1.3 << "BETA:" << beta << endl;
+        }
+        else{
+            if (mod < 1500){
+                setRobotSpeed(0, 0);
+                target.active = false;
+            }
+        }
     }
+}
 
-    if (!people.peoplelist.empty())
-    {
-        const auto &person = people.peoplelist[0];
-            if (person.joints.contains(std::to_string(17))){
+int SpecificWorker::eleccionPersona(const RoboCompHumanCameraBody::PeopleData &people){
+    int indiceActual = 0;
+    int indiceMejorHastaAhora = 0;
+    float mejorDistanciaHastaAhora = 3000;
+    int personasSinJulia = 0;
+
+    if (!people.peoplelist.empty()) {
+        for (const auto &person: people.peoplelist) {
+            if (person.joints.contains("17")) {
                 auto cd = person.joints.at("17");
-
-//                std::cout << "x ->" << cd.x << " y -> " << cd.y << " z -> " << cd.z << std::endl;
-                Eigen::Vector2f points = ((x_axis_rotation_matrix * Eigen::Vector3f (cd.x, cd.y, cd.z)) * 1000.f).head(2);
+                Eigen::Vector2f points = ((x_axis_rotation_matrix * Eigen::Vector3f(cd.x, cd.y, cd.z)) * 1000.f).head(2);
                 points.y() = -points.y();  // invert axis
-                QPointF f = world_to_robot2(points, bState);
+                float dist = sqrt(pow(points.x(), 2) + pow(points.y(), 2));
 
-                auto target_r = laser_in_robot_polygon->mapToScene(f);
-                target_elipse = viewer->scene.addEllipse(-f.x(), f.y(), 200, 200, QPen(color, 30), QBrush(color));
-                target_elipse->setZValue(3);
-
-                //Elegir target
-                if (!primerTarget)
-                {
-                    targetAnterior = QPointF(points.x(), points.y());
-                    primerTarget = true;
-                }
-
-                float dist = sqrt(pow((points.x() - targetAnterior.x()), 2) + pow((points.y() - targetAnterior.y()), 2));
-                if (dist <= 1000) {
-                    qInfo() << __FUNCTION__ << "TARGET ACTUALIZADO" << endl;
-                    this->target.dest = QPointF(points.x(), points.y());
-                    this->target.active = true;
-                    targetAnterior = QPointF(points.x(), points.y());
-                }
-                else
-                {
-                    qInfo() << __FUNCTION__ << "TARGET ANTERIOR" << endl;
-                    this->target.dest = QPointF(targetAnterior.x(), targetAnterior.y());
-                    this->target.active = true;
+                if (dist < mejorDistanciaHastaAhora){
+                    mejorDistanciaHastaAhora = dist;
+                    indiceMejorHastaAhora = indiceActual;
                 }
             }
             else{
-                this->target.active = false;
+                personasSinJulia++;
             }
+            indiceActual++;
+        }
+        std::cout << "num personas sin cuello -> " << personasSinJulia << " -------- indice Actual -> " << indiceActual << std::endl;
+        if (personasSinJulia == indiceActual){
+            indiceMejorHastaAhora = -1;
+        }
+        std::cout << "numero personas -> " << indiceActual << std::endl;
+        return indiceMejorHastaAhora;
     }
-    else{
-        this->target.active = false;
-    }
+    else
+        return -1;
 }
+void SpecificWorker::drawPeopleMap (const RoboCompHumanCameraBody::PeopleData &people, RoboCompFullPoseEstimation::FullPoseEuler bState, int personaElegida){
+    QColor color("Magenta");
+    static QGraphicsItem *target_elipse = nullptr;
+
+    if (target_elipse != nullptr){
+        viewer->scene.removeItem(target_elipse);
+    }
+
+    std::cout << "Persona elegida -> " << personaElegida << std::endl;
+    const auto &person = people.peoplelist[personaElegida];
+    if (!person.joints.contains("17")) {
+        std::cout << "puto" << std::endl;
+    }
+    auto cd = person.joints.at("17");
+
+//  std::cout << "x ->" << cd.x << " y -> " << cd.y << " z -> " << cd.z << std::endl;
+    Eigen::Vector2f points = ((x_axis_rotation_matrix * Eigen::Vector3f(cd.x, cd.y, cd.z)) * 1000.f).head(2);
+    points.y() = -points.y();  // invert axis
+    QPointF f = world_to_robot2(points, bState);
+
+    auto target_r = laser_in_robot_polygon->mapToScene(f);
+    target_elipse = viewer->scene.addEllipse(f.x(), -f.y(), 200, 200, QPen(color, 30), QBrush(color));
+    target_elipse->setZValue(3);
+
+    this->target.dest = QPointF(points.x(), points.y());
+    this->target.active = true;
+}
+
 
 void SpecificWorker::posicionRobot (RoboCompFullPoseEstimation::FullPoseEuler bState){
         robot_polygon->setRotation(bState.rz*180/M_PI);
         robot_polygon->setPos(bState.x, bState.y);
 
         pos_x->display(bState.x);
-        pos_y->display(bState.z);
+        pos_y->display(bState.y);
 }
 
 QPointF SpecificWorker::world_to_robot(RoboCompFullPoseEstimation::FullPoseEuler state)
@@ -344,17 +393,26 @@ void SpecificWorker::moveRobot(){
             beta = 0;
         }
 
+        std::cout << "holi 1" << std::endl;
         if (mod < 3000) {
-            setRobotSpeed(adv+500, beta*0.9);
-            qInfo() << __FUNCTION__ << "ADV:" << adv+500 << "BETA:" << beta << endl;
+            estaParao = false;
+            setRobotSpeed(adv, beta*1.2);
+            //qInfo() << __FUNCTION__ << "ADV:" << adv*1.3 << "BETA:" << beta << endl;
         }
-        else if (mod < 1000)
-        {
-            setRobotSpeed(0, beta*0.9);
+        else{
+            if (mod < 1500){
+                setRobotSpeed(0, 0);
+                target.active = false;
+            }
         }
+        std::cout << "holi 2" << std::endl;
     }
     else{
-        setRobotSpeed(0, 0);
+        std::cout << "holi 3" << std::endl;
+        if (!estaParao){
+            setRobotSpeed(0, 0);
+            estaParao = true;
+        }
     }
 }
 
@@ -365,7 +423,7 @@ void SpecificWorker::moveRobot(){
 
 float SpecificWorker::reduce_speed_if_close_to_target(float mod)
 {
-    int threshold = 1000;
+    int threshold = 2000;
 
     if (mod <= threshold)
     {
@@ -419,6 +477,7 @@ void SpecificWorker::setRobotSpeed(float speed, float rot)
 {
     differentialrobot_proxy->setSpeedBase(speed, rot);
     this->speed->display(speed);
+//    std::cout << "velocidad :) -> " << this->speed->value() << std::endl;
 }
 
 void SpecificWorker::draw_laser(const RoboCompLaser::TLaserData &ldata) // robot coordinates
