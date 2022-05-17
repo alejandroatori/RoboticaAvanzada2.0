@@ -176,16 +176,16 @@ void SpecificWorker::compute()
     posicionRobot(bState);
     int personaElegida = eleccionPersona(people);
     if (personaElegida != -1){
-        std::cout << "Problema 1" << std::endl;
+//        std::cout << "Problema 1" << std::endl;
         drawPeopleMap(people, bState, personaElegida);
-        std::cout << "Problema 2" << std::endl;
+//        std::cout << "Problema 2" << std::endl;
         moveRobot();
-        std::cout << "Problema 3" << std::endl;
+//        std::cout << "Problema 3" << std::endl;
     }
     else{
-        std::cout << "Problema 4" << std::endl;
+//        std::cout << "Problema 4" << std::endl;
         seguirUltimaPosicion();
-        std::cout << "Problema 5" << std::endl;
+//        std::cout << "Problema 5" << std::endl;
     }
 }
 
@@ -393,7 +393,7 @@ void SpecificWorker::moveRobot(){
             beta = 0;
         }
 
-        std::cout << "holi 1" << std::endl;
+//        std::cout << "holi 1" << std::endl;
         if (mod < 3000) {
             estaParao = false;
             setRobotSpeed(adv, beta*1.2);
@@ -405,10 +405,10 @@ void SpecificWorker::moveRobot(){
                 target.active = false;
             }
         }
-        std::cout << "holi 2" << std::endl;
+//        std::cout << "holi 2" << std::endl;
     }
     else{
-        std::cout << "holi 3" << std::endl;
+//        std::cout << "holi 3" << std::endl;
         if (!estaParao){
             setRobotSpeed(0, 0);
             estaParao = true;

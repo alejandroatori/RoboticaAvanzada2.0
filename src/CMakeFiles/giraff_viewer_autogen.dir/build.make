@@ -44,10 +44,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/189/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/190/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/189/bin/cmake/linux/bin/cmake -E rm -f
+RM = /snap/clion/190/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -68,7 +68,7 @@ include src/CMakeFiles/giraff_viewer_autogen.dir/progress.make
 
 src/CMakeFiles/giraff_viewer_autogen:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/alumno/RoboticaAvanzada/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target giraff_viewer"
-	cd /home/alumno/RoboticaAvanzada/src && /snap/clion/189/bin/cmake/linux/bin/cmake -E cmake_autogen /home/alumno/RoboticaAvanzada/src/CMakeFiles/giraff_viewer_autogen.dir/AutogenInfo.json ""
+	cd /home/alumno/RoboticaAvanzada/src && /snap/clion/190/bin/cmake/linux/bin/cmake -E cmake_autogen /home/alumno/RoboticaAvanzada/src/CMakeFiles/giraff_viewer_autogen.dir/AutogenInfo.json ""
 
 giraff_viewer_autogen: src/CMakeFiles/giraff_viewer_autogen
 giraff_viewer_autogen: src/CMakeFiles/giraff_viewer_autogen.dir/build.make
